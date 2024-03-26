@@ -1,0 +1,16 @@
+{
+  "name": "pai-organiza",
+  "version": "1.0.0",
+  "description": "Um gerenciador de tarefas dinamico e eficiente criado para ajudar o meu pai a organizar as tarefas do dia.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinicius Bavosa",
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "express": "^4.19.2",
+    "helmet": "^7.1.0"
+  }
+}
