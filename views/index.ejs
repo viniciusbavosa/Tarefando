@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+  <main 
+    class="
+      h-screen
+      flex 
+      flex-row 
+      flex-nowrap
+      bg-transparent
+      font-sans
+      "
+  >
+    <!-- Sidebar Menu -->
+    <section 
+      class="
+        menu-container 
+        bg-neutral-900
+        w-96
+        z-10			
+        "
+      >
+      <div 
+        class="
+          user-container 
+          flex 
+          flex-row 
+          justify-start
+          m-5
+          "
+        >
+        <svg 
+          xmlns="http://www.w3.org/2000/svg" 
+          fill="none" viewBox="0 0 24 24" 
+          stroke-width="1.0" 
+          stroke="#FFFF"
+          class="
+          size-16
+          transition
+          ease-in-out
+          delay-100
+          hover:stroke-emerald-400
+          "
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+        </svg>
+        <p 
+          class="
+            self-center 
+            ps-1
+            text-gray-200
+            font-normal
+            text-lg
+            "
+        >
+          Olá, <%= username %>!
+        </p>
+      </div>
+      <div class="
+        search-container 
+        text-center
+        "
+        >
+        <input
+          type="search"
+          name=""
+          id=""
+          placeholder="Buscar"
+          title="Pesquisar suas tarefas"
+          class="
+            border
+          border-x-slate-200/25
+          border-t-slate-200/25
+          border-b-slate-200
+            focus:outline-none
+            w-4/5
+            h-7
+            py-4
+            px-3
+            rounded-md
+            my-3
+            focus:border-b-emerald-400
+            focus:caret-slate-50
+            focus:text-slate-50
+            placeholder:text-neutral-200/85
+            focus:placeholder:text-neutral-200/60
+            bg-transparent
+            "
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"viewBox="0 0 28 28" stroke-width="1.0" 
+            stroke="#F3F3F3"
+            class="
+              w-6
+              h-auto
+              translate-x-60
+              -translate-y-10
+              xl:translate-x-64
+            "
+            >
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </div>
+    <!-- Navbar -->
+      <nav 
+        class="
+          menu-container
+          text-neutral-100
+          "
+        >
+        <ul>
+          <li>
+            <div 
+              class="
+              dashboard-container
+              flex
+              
+              "
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F3F3F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> Início
+            </div>
+          </li>
+          <li>
+            Visão Geral
+          </li>
+          <li>
+            Tarefas pendentes
+          </li>
+          <li>
+            Lembretes
+          </li>
+          <li>
+            Projetos
+          </li>
+          <li>
+            Calendário
+          </li>
+          <li>
+            Configurações
+          </li>
+        </ul>
+      </nav>
+    </section>
+    <section 
+      class="
+        task-container
+        bg-random-image
+        bg-center
+        bg-no-repeat
+        ms-auto
+        w-screen
+        bg-cover
+        flex
+        xl:bg-cover
+        xl:w-screen
+        xl:bg-top
+      "
+      >
+      <div 
+        class="
+          floatbox-and-create-task-container
+          w-full
+          h-full
+          flex
+          flex-col
+          justify-between
+          items-center
+        "
+        >
+        <div
+          class="
+            floatbox-container
+            bg-stone-400/65
+            my-auto
+            w-64
+            h-56
+            rounded-md
+            text-pretty
+            "
+            >
+          <img
+            src="assets/svgs/Calendar.svg"
+            loading="lazy"
+            alt="Calendar icon"
+            class="
+              mx-auto
+            "
+          >
+          <h1 class="
+            text-center
+            font-semibold
+            text-xl
+            text-neutral-100
+          "
+          >
+            Foque em seu dia
+          </h1>
+          <div 
+            class="
+              subtitle-container
+              w-56
+              mx-auto
+            "
+            >
+            <p 
+              class="
+                text-center
+                text-neutral-100
+                font-light
+                pt-4
+                text-sm
+              "
+            >
+              Faça mais. Estresse menos. Gerencie tudo com facilidade.
+            </p>
+          </div>
+        </div>
+        <div
+          class="
+            create-task-container
+            w-10/12
+            mb-6
+            flex
+          "
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+              class="
+                feather feather-plus
+                translate-x-8
+                translate-y-3
+                "
+              >
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          <input
+            type="text"
+            name=""
+            id=""
+            placeholder="Adicionar uma tarefa"
+            title="Adicionar uma nova tarefa a &quot;Meu dia&quot;"
+            class="
+              js-input-task
+              flex-initial
+              basis-full
+              h-12
+              ps-10
+              bg-stone-400/55
+              rounded-md
+              focus:outline-none
+              transition-colors
+              ease-in-out
+            hover:bg-stone-500/60
+            placeholder:text-white
+              placeholder:text-lg
+              placeholder:font-light
+            focus:caret-slate-50
+            focus:text-slate-50
+            "
+            >
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <script src="/scripts/placeholder.js"></script>
+</body>
+</html>
