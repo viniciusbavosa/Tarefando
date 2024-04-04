@@ -1,407 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <%- include('./partials/head.ejs') %>
 <body>
   <main 
     class="
       h-screen
-      flex 
-      flex-row 
-      flex-nowrap
+      w-screen
+      flex
       bg-transparent
-      font-sans
       "
   >
-    <!-- Sidebar Menu -->
-    <section 
+  <!-- Mobile -->
+    <section
       class="
-        menu-container 
-        bg-neutral-900
-        w-96
-        z-10			
-        "
-      >
-      <div 
-        class="
-          user-container 
-          flex 
-          flex-row 
-          justify-start
-          m-5
-          "
-        >
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          fill="none" viewBox="0 0 24 24" 
-          stroke-width="1.0" 
-          stroke="#F3F3F3"
-          class="
-          size-16
-          transition
-          ease-in-out
-          delay-100
-          hover:stroke-emerald-400
-          "
-          >
-            <path 
-              stroke-linecap="round" 
-              stroke-linejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
-        </svg>
-        <p 
-          class="
-            self-center 
-            ps-1
-            text-gray-200
-            font-normal
-            text-lg
-            "
-        >
-          Olá, <%= username %>!
-        </p>
-      </div>
-      <div class="
-        search-container 
-        text-center
-        "
-        >
-        <input
-          type="search"
-          name=""
-          id=""
-          placeholder="Buscar"
-          title="Pesquisar suas tarefas"
-          class="
-            border
-          border-x-slate-200/25
-          border-t-slate-200/25
-          border-b-slate-200
-            focus:outline-none
-            w-4/5
-            h-7
-            py-4
-            px-3
-            rounded-md
-            my-3
-            focus:border-b-emerald-400
-            focus:caret-slate-50
-            focus:text-slate-50
-            placeholder:text-neutral-200/85
-            focus:placeholder:text-neutral-200/60
-            bg-transparent
-            "
-          >
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none"viewBox="0 0 28 28" stroke-width="1.0" 
-            stroke="#F3F3F3"
-            class="
-              w-6
-              h-auto
-              translate-x-60
-              -translate-y-10
-              xl:translate-x-64
-            "
-            >
-            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-          </svg>
-        </div>
-      <!-- Navbar -->
-      <nav>
-        <ul 
-          class="
-            menu-container
-            h-72
-            mx-5
-          text-neutral-100
-            font-light
-            text-lg
-            flex
-            flex-col
-            justify-between
-            items-start	
-            bg-transparent
-          "
-        >
-          <li 
-            class="
-              home-bttn-container
-              flex
-              items-center
-              w-64
-              h-11
-            hover:text-emerald-400
-            hover:bg-neutral-800
-            "
-          >
-            <a href="/">
-              <div
-                class="
-                  flex
-                  items-center
-                  "
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F3F3F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                <p class="ms-2">
-                  Início
-                </p>
-              </div>
-            </a>
-          </li>
-          <li 
-            class="
-              dashboard-bttn-container
-              flex
-              items-center
-              w-64
-              h-11
-            hover:text-emerald-400
-            hover:bg-neutral-800
-            "
-          >
-            <a href="#">
-              <div
-                class="
-                  flex
-                  items-center
-                  "
-                  >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#F3F3F3" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                  </svg>                  
-                  <p class="ms-2">
-                      Visão Geral
-                    </p>
-              </div>
-            </a>
-          </li>
-          <li
-            class="
-              todo-tasks-bttn-container
-              flex
-              items-center
-              w-64
-              h-11
-            hover:text-emerald-400
-            hover:bg-neutral-800"
-          >
-            <a href="#">
-              <div
-                class="
-                  flex
-                  items-center	
-                "
-                >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#F3F3F3" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
-                </svg>
-                <p class="ms-2">
-                  Tarefas pendentes
-                </p>
-              </div>
-            </a>
-          </li>
-          <li 
-            class="
-              calendar-bttn-container
-              flex
-              items-center
-              w-64
-              h-11
-            hover:text-emerald-400
-            hover:bg-neutral-800"
-            >
-            <a href="#">
-              <div
-                class="
-                  flex
-                  items-center	
-                "
-              >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#F3F3F3" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
-              </svg>
-              <p class="ms-2">
-                Calendário
-              </p>
-              </div>
-            </a>
-          </li>
-          <li 
-            class="
-              settings-bttn-container
-              flex
-              items-center
-              w-64
-              h-11
-            hover:text-emerald-400
-            hover:bg-neutral-800
-          ">
-            <a href="#">
-              <div
-                class="
-                  flex
-                  items-center	
-                "
-              >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#F3F3F3" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-              </svg>
-              <p class="ms-2">
-                Configurações
-              </p>
-              </div>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <div
-        class="
-          new-project-bttn
-        text-neutral-100
-          mx-5
-          h-11
-          translate-y-96
-        "
-      >
-      <a href="#" 
-        class="
-          flex
-          justify-start
-          items-center
-        ">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-plus">
-            <line x1="12" y1="5" x2="12" y2="19"></line>
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-            <p class="ms-2">
-              Novo projeto
-            </p>
-        </a>
-        </div>
-    </section>
-    <section 
-      class="
-        task-container
-        bg-random-image
-        bg-center
-        bg-no-repeat
-        ms-auto
-        w-screen
-        bg-cover
+        mobile-homepage-container
         flex
-        xl:bg-cover
-        xl:w-screen
-        xl:bg-top
+        flex-col
+        w-screen
+        h-full
+        bg-black
       "
-      >
+    >
       <div 
         class="
-          floatbox-and-create-task-container
-          w-full
-          h-full
+          header
+          flex
+          flex-row
+          h-[66px]
+          justify-between
+          "
+      >
+        <div 
+          class="
+            menu-icon-container 
+            py-5 
+            px-4 
+            flex-none
+            "
+            >
+          <button 
+            class="
+            pr-4
+            "
+            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+        <div 
+          class="
+            user-notification-container
+            py-5 
+            px-4 
+            flex-none">
+          <button type="button" class="pr-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </button>
+          <button type="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </button>
+        </div>
+      </div>
+      <div 
+        class="
+          mobile-title-container
           flex
           flex-col
-          justify-between
-          items-center
+          flex-wrap
+          px-[21px]
+          py-[16px]
+        bg-black
+          w-screen
+          h-full
         "
-        >
-        <div
+      >
+        <p 
           class="
-            floatbox-container
-            bg-stone-400/65
-            my-auto
-            w-64
-            h-56
-            rounded-md
+            today-date
+            text-[17px]
+            text-white
+            "
+            >
+          01 de março de 2024
+        </p>
+        <h1
+          class="
+            body-title
+            text-[25px]
             text-pretty
-            "
-            >
-          <img
-            src="assets/svgs/Calendar.svg"
-            loading="lazy"
-            alt="Calendar icon"
-            class="
-              mx-auto
-              mt-1
-            "
-          >
-          <h1 class="
-            text-center
-            font-semibold
-            text-xl
-            text-neutral-100
+            pt-[13px]
+            text-white
           "
-          >
-            Foque em seu dia
-          </h1>
-          <div 
-            class="
-              subtitle-container
-              w-56
-              mx-auto
-            "
-            >
-            <p 
-              class="
-                text-center
-                text-neutral-100
-                font-light
-                pt-4
-                text-sm
-              "
-            >
-              Faça mais. Estresse menos. Gerencie tudo com facilidade.
-            </p>
-          </div>
-        </div>
-        <div
-          class="
-            create-task-container
-            w-10/12
-            mb-6
-            flex
+        >
+          Bom dia, <%= username %>. Aqui estão suas tarefas diárias
+        </h1>
+      </div>
+      <div 
+        class="
+          mobile-body-container
+          w-screen
+          h-screen
+          flex
+          flex-col
           "
+      >
+      </div>
+      
+      <div 
+        class="
+          new-task-bttn-container
+          bg-black
+          inline-flex
+          flex-row
+          flex-nowrap
+          outline
+          outline-1
+          outline-white
+          absolute
+          w-[46px]
+          h-[46px]
+          top-[36rem]
+          rounded-xl
+          justify-center
+          self-center
+          shadow-md
+          shadow-black
+          "
+      >
+        <button
+          type="button"
+          class="js-new-task-bttn"
           >
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"    stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
-              class="
-                feather feather-plus
-                translate-x-8
-                translate-y-3
-                "
-              >
-              <line x1="12" y1="5" x2="12" y2="19"></line>
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-          </svg>
-          <input
-            type="text"
-            name=""
-            id=""
-            placeholder="Adicionar uma tarefa"
-            title="Adicionar uma nova tarefa a &quot;Meu dia&quot;"
-            class="
-              js-input-task
-              flex-initial
-              basis-full
-              h-12
-              ps-10
-              bg-stone-400/55
-              rounded-md
-              focus:outline-none
-              transition-colors
-              ease-in-out
-            hover:bg-stone-500/60
-            placeholder:text-white
-              placeholder:text-lg
-              placeholder:font-light
-            focus:caret-slate-50
-            focus:text-slate-50
-            "
-            >
-        </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </button>
       </div>
     </section>
   </main>
-  
-  <script src="/scripts/placeholder.js"></script>
+  <script type="module" src="/scripts/showInput.js"></script>
 </body>
 </html>

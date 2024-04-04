@@ -3,15 +3,12 @@ export default {
   content: ["./views/**/*.ejs"],
   theme: {
     extend: {
-      backgroundImage: {
-        'random-image': "url('assets/img/nightsky.webp')"
-      },
       fontFamily: {
         sans: ['Poppins', 'sans-serif']
       },
-      translate: {
-        '64': '17rem',
-        '60': '235px'
+      colors: {
+        'black': '#0D0D0D',
+        'white': '#F0F0F0'
       }
     }
   },

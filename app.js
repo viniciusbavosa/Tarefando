@@ -27,6 +27,15 @@ app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use((req, res, next) => {
+  // Define os cabeçalhos de controle de cache para todas as respostas
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  res.setHeader('Surrogate-Control', 'no-store');
+
+  next();
+});
 
 // Routes
 app.use(renderRoutes);
