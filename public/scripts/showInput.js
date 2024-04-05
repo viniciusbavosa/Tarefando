@@ -1,14 +1,23 @@
+import { sendTask } from "./sendTask.js";
+
 // Checks if the devide has a max-width of 639px
 const mediaQuery = window.matchMedia('(max-width: 639px)');
 const newTaskBttn = document.querySelector('.js-new-task-bttn');
 const newTaksBttnContainer = document.querySelector('.new-task-bttn-container');
-const body = document.querySelector('.mobile-body-container');
-let newTask;
+
 
 if (mediaQuery.matches) {
+  showInput();
+} else {
+  console.log('Tamanho da tela maior que 639px')
+};
+
+
+function showInput() {
   newTaskBttn.addEventListener('click', () => {
     newTaksBttnContainer.classList.add('animate__animated', 'animate__fadeOut')
-    newTaksBttnContainer.outerHTML = `<div 
+    newTaksBttnContainer.outerHTML = `
+    <div 
       class="new-task-input-container animate__animated animate__fadeIn"
       style="
         margin: 0px auto;
@@ -21,7 +30,7 @@ if (mediaQuery.matches) {
             color: white;
             outline: none;
             border-radius: 12px;
-            padding: 8px 8px;
+            padding: 8px 35px 8px 8px;
             width: 19em;
             relative
           "
@@ -31,69 +40,6 @@ if (mediaQuery.matches) {
           </button>
   </div>`
 
-  
-  const sendButton = document.querySelector('#sendBttn')
-  const input = document.querySelector('.new-task-input');
-  if (input && sendButton) {
-    sendButton.addEventListener('click', () => {
-      let inputValue = document.querySelector('.new-task-input');
-      const task = `
-      <p style="font-size: 2em;"
-        class="
-          line-clamp-4
-          whitespace-normal
-          text-center
-          py-2
-          w-[221px]
-        text-white
-          font-light
-        ">
-         ${inputValue.value}
-      </p>
-      <span 
-        class="
-          check-bttn
-          w-[60px]
-          h-[60px]
-          outline
-          outline-1
-        outline-white
-          rounded-xl
-          "
-          ></span>`
-
-      inputValue.value = ''
-
-      fetch('/', {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ value: task})
-    
-      })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data)
-        data.task.forEach((value) => {
-          newTask = value
-        const newElement = document.createElement('div');
-        newElement.classList.add('task-container', 'bg-[#798570]', 'flex', 'flex-row', 'items-center', 'w-[343px]', 'h-auto', 'gap-[30px]', 'self-center', 'rounded-lg', 'px-[16px]', 'text-sm', 'text-pretty');
-          newElement.style.marginTop = '12px';
-        newElement.innerHTML = `${newTask}`
-        body.appendChild(newElement);
-        })
-        
-      })
-      .catch(err => console.log(err));
-      
-    });
-  } else {
-    console.log('Erro');
-  };
-
-  
- })
-} else {
-  console.log('Tamanho da tela maior que 639px')
+  sendTask();
+  });
 };

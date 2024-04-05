@@ -11,8 +11,8 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  const task = []
-  task.push(req.body.value)
+  let task = ''
+  task = req.body.value
   res.status(200).json({
     task
   });
