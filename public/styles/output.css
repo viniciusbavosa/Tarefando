@@ -548,8 +548,8 @@ video {
   position: absolute;
 }
 
-.top-\[36rem\] {
-  top: 36rem;
+.top-\[90\%\] {
+  top: 90%;
 }
 
 .flex {
@@ -606,10 +606,6 @@ video {
 
 .flex-nowrap {
   flex-wrap: nowrap;
-}
-
-.items-center {
-  align-items: center;
 }
 
 .justify-center {

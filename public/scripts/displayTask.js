@@ -7,14 +7,16 @@ export function displayTask(data) {
     newElement.style.display = 'flex';
     newElement.style.flexDirection = 'flex-row';
     newElement.style.width = '343px';
-    newElement.style.height = '0';
     newElement.style.minHeight = '60px'
     newElement.style.borderRadius = '8px';
     newElement.style.padding = '6px 16px';
     newElement.style.margin = '6px auto'
     newElement.style.justifyContent = 'center';
     newElement.style.alignItems = 'center';
-    newElement.style.overflow = 'auto';
+    newElement.style.overflow = 'wrap';
+    newElement.style.textWrap = 'wrap';
+    newElement.style.wordBreak = 'break-word'
+    newElement.style.position = 'relative'
     newElement.innerHTML = data.task
     body.appendChild(newElement);
     styleCheckBttn(newElement);

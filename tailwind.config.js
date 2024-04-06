@@ -9,9 +9,17 @@ export default {
       colors: {
         'black': '#0D0D0D',
         'white': '#F0F0F0'
+      },
+      screens: {
+        
       }
     }
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio')
+  ],
 }
 

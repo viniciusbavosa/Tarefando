@@ -16,6 +16,7 @@ export function sendTask() {
             color: #F1F1F1;
             font-size: 16px;
             text-wrap: pretty;
+            word-break: break-word;
           ">
           ${input.value}
         </p>
@@ -23,10 +24,7 @@ export function sendTask() {
           role="checkbox"
           aria-checked="false"
           tabindex="0" 
-          class="
-            check-bttn 
-            relative
-            "
+          class="check-bttn"
           style="
             background-color: transparent;
             width: 15%;
