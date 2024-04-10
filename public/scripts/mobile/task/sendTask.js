@@ -47,7 +47,6 @@ export function sendTask() {
         .then(response => response.json())
         .then(data => { displayTask(data) })
         .catch(err => console.log(err));
-        
       });
   }
 };
