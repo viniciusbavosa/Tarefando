@@ -16,6 +16,6 @@ router.post('/', (req, res) => {
   res.status(200).json({
     task
   });
-})
+});
 
 export { router as renderRoutes };

@@ -7,7 +7,7 @@ export function displayTask(data) {
     position: 'relative',
     display: 'flex',
     flexDirection: 'flex-row',
-    backgroundColor: '#798570',
+    backgroundColor: '#A7B69A',
     width: '343px',
     minHeight: '60px',
     borderRadius: '8px',
@@ -15,9 +15,9 @@ export function displayTask(data) {
     margin: '6px auto',
     justifyContent: 'center',
     alignItems: 'center',
-    overflow: 'wrap',
     textWrap: 'wrap',
     wordBreak: 'break-word',
+    boxShadow: '0px 3px 4px #000000',
   };
     newElement.classList.add('task-container');
     for (let property in styles) {

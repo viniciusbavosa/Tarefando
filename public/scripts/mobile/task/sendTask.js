@@ -9,14 +9,17 @@ export function sendTask() {
         const task = `
         <p
           style="
+            display: block-flex;
+            align-items: center;
             white-space: wrap;
             padding: 2px 0;
             width: 221px;
-            height: auto;
-            color: #F1F1F1;
-            font-size: 16px;
-            text-wrap: pretty;
-            word-break: break-word;
+            height: 40px;
+            color: #000;
+            font-size: 24px;
+            font-weight: 500;
+            text-wrap: wrap;
+            overflow: scroll;
           ">
           ${input.value}
         </p>
@@ -29,7 +32,7 @@ export function sendTask() {
             background-color: transparent;
             width: 15%;
             height: 95%;
-            outline: white solid 1px;
+            outline: black solid 1.9px;
             border-radius: 16px;
             margin-left: auto;
             "

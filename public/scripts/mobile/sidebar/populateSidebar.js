@@ -2,21 +2,18 @@ import sidebar from "./openSidebar.js";
 import { showCollectionInput } from "./showCollectionInput.js";
   sidebar.innerHTML = `
   <ul 
-    class="
-    flex
-    flex-col
-    flex-nowrap
-    overflow-hidden
-    w-full
-    absolute
-    justify-between
-  text-white
-    "
     style="
-    font-size: 25px;
-    height: 20%;
-    top: 80px;
-    left: 16px;
+      display: flex;
+      flex-direction: column;
+      color: white;
+      overflow: hidden;
+      position: absolute;
+      font-size: 24px;
+      height: 30%;
+      top: 80px;
+      left: 16px;
+      white-space: collapse pretty;
+      justify-content: space-evenly;
     "
     >
     <a href="/">
@@ -27,6 +24,9 @@ import { showCollectionInput } from "./showCollectionInput.js";
     </a>
     <a href="#">
       <li>Calendário</li>
+    </a>
+    <a href="#">
+      <li>Preferências</li>
     </a>
   </ul>
   <button type="button" class="js-create-collection-bttn create-collection-bttn-container">

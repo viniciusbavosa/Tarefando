@@ -1,0 +1,41 @@
+.sidebar {
+  width: 50%;
+  height: 100%;
+  background-color: #1E1E1E;
+  box-shadow: 3px 0px 4px #00000030;
+  position: absolute;
+  visibility: hidden;
+}
+
+.display-sidebar {
+  visibility: visible;
+  animation: slideInLeft;
+  animation-duration: 500ms;
+}
+
+.close-sidebar {
+  animation: slideOutLeft;
+  animation-duration: 500ms;
+}
+
+.create-collection-bttn-container {
+  position: absolute;
+  top: 90%;
+  left: 11%;
+  background-color: #2F2F2F;
+  color: #F0F0F0;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 75%;
+  height: 46px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 2px #000;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    width: 25%;
+  }
+}

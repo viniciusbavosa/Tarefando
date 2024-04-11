@@ -4,10 +4,13 @@
 <body>
   <main 
     class="
+      main-container
       h-screen
       w-screen
+      relative
       flex
       bg-transparent
+      overflow-y-auto
       "
   >
   <!-- Mobile -->
@@ -18,12 +21,13 @@
         flex-col
         w-screen
         h-full
-        bg-black
+      bg-black
       "
     >
       <div 
         class="
           header
+          relative
           flex
           flex-row
           h-[66px]
@@ -36,6 +40,7 @@
             py-5 
             px-4 
             flex-none
+            z-10
             "
             >
           <button 
@@ -43,20 +48,7 @@
             pr-4
             "
             >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          </button>
-        </div>
-        <div 
-          class="
-            user-notification-container
-            py-5 
-            px-4 
-            flex-none">
-          <button type="button" class="pr-4">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          </button>
-          <button type="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
         </div>
       </div>
@@ -66,7 +58,7 @@
           flex
           flex-col
           flex-wrap
-          px-[21px]
+          px-[24px]
           py-[16px]
         bg-black
           w-screen
@@ -77,7 +69,7 @@
         <p 
           class="
             today-date
-            text-[17px]
+            text-[16px]
             "
             >
           01 de março de 2024
@@ -85,9 +77,9 @@
         <h1
           class="
             body-title
-            text-[25px]
+            text-[24px]
             text-pretty
-            pt-[13px]
+            pt-[16px]
           "
         >
           Bom dia, <%= username %>. Aqui estão suas tarefas diárias
@@ -100,6 +92,7 @@
           h-screen
           flex
           flex-col
+          relative
           "
       ></div>
       <div 
@@ -127,11 +120,13 @@
           type="button"
           class="js-new-task-bttn"
           >
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F0F0F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
       </div>
     </section>
   </main>
-  <script type="module" src="/scripts/showInput.js"></script>
+  <script type="module" src="/scripts/mobile/index/showInput.js"></script>
+  <script type="module" src="/scripts/mobile/sidebar/openSidebar.js"></script>
+  <script type="module" src="/scripts/mobile/sidebar/populateSidebar.js"></script>
 </body>
 </html>
