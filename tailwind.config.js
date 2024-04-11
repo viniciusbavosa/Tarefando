@@ -7,19 +7,14 @@ export default {
         sans: ['Poppins', 'sans-serif']
       },
       colors: {
-        'black': '#0D0D0D',
-        'white': '#F0F0F0'
+        'black': '#121212',
+        'white': '#FFFFFF'
       },
-      screens: {
-        
-      }
     }
   },
   corePlugins: {
     aspectRatio: false,
   },
-  plugins: [
-    require('@tailwindcss/aspect-ratio')
-  ],
+  plugins: [],
 }
 
