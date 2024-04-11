@@ -1,0 +1,38 @@
+.new-task-input-container {
+  margin: 0px auto;
+  margin-bottom: 40px;
+  position: fixed;
+  top: 91%;
+  left: 10%;
+}
+
+.new-task-input {
+  background-color: #1E1E1E;
+  color: white;
+  outline: none;
+  border-radius: 12px;
+  padding: 8px 35px 8px 8px;
+  width: 19rem;
+  box-shadow: 0px 2px 2px #000;
+}
+
+.create-collection-input-container {
+  position: fixed;
+  top: 90.5%;
+  left: 5%;
+}
+
+.create-collection-input {
+  background-color: #3F3F3F;
+  color: white;
+  outline: none;
+  border-radius: 12px;
+  padding: 8px 35px 8px 8px;
+  width: 60%;
+  box-shadow: 0px 2px 2px #000;
+}
+
+.onfocus {
+  background-color: #2F2F2F;
+  outline: 1px solid white;
+}
