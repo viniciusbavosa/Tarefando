@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="/styles/output.css" as="style">
   <link rel="stylesheet" href="/styles/output.css">
-  <link rel="stylesheet" href="/styles/inputs.css">
+  <link rel="stylesheet" href="/styles/textinputs.css">
   <link rel="stylesheet" href="/styles/sidebar.css">
+  <link rel="stylesheet" href="/styles/tasks.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +23,9 @@
       relative
       flex
       bg-transparent
-      overflow-y-auto
+      overflow-clip
       "
   >
-  <!-- Mobile -->
     <section
       class="
         mobile-homepage-container
@@ -34,8 +34,32 @@
         w-screen
         h-full
       bg-black
+       
       "
     >
+      <aside class="sidebar">
+        <ul class="menu">
+          <a href="/">
+            <li>Início</li>
+          </a>
+          <a href="#">
+            <li>Coleções</li>
+          </a>
+          <a href="#">
+            <li>Calendário</li>
+          </a>
+          <a href="#">
+            <li>Preferências</li>
+          </a>
+        </ul>
+        <button type="button" class="js-create-collection-bttn create-collection-bttn-container">
+          <div class="collection-bttn">
+            <p>
+            Criar coleção
+            </p>
+          </div>
+        </button>
+      </aside>
       <div 
         class="
           header
@@ -60,7 +84,16 @@
             pr-4
             "
             >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+            class="
+            w-[24px] 
+            h-[24px]
+            sm:w-[32px]
+            sm:h-[32px]
+            feather feather-menu
+            "
+            >
+            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
         </div>
       </div>
@@ -70,43 +103,59 @@
           flex
           flex-col
           flex-wrap
-          px-[24px]
-          py-[16px]
+          mx-4
+          my-3
         bg-black
           w-screen
           h-auto
         text-white
         "
       >
-        <p 
-          class="
-            today-date
-            text-[16px]
-            "
-            >
-          01 de março de 2024
-        </p>
+        <p class="today-date text-[16px] sm:text-[18px] md:text-[22px]"></p>
         <h1
           class="
             body-title
             text-[24px]
+            sm:text-[28px]
+            md:text-[32px]
             text-pretty
-            pt-[16px]
+            pt-[8px]
           "
         >
-          Bom dia! Aqui estão suas tarefas diárias
+          <span class="daytime"></span>! Aqui estão suas tarefas diárias
         </h1>
       </div>
       <div 
         class="
-          mobile-body-container
+          body-container
           w-screen
           h-screen
           flex
           flex-col
           relative
           "
-      ></div>
+      >
+        <div class="list-container">
+          <ul class="list"></ul>
+        </div>
+        <div class="svg-container flex invisible">
+          <img class="svg" src="../../../assets/svg/mansit.svg" alt="A man reading books">
+        </div>
+      </div>
+      <div 
+        class="
+          new-task-input-container 
+          animate__animated 
+          animate__fadeIn
+          invisible
+          xl:visible
+          "
+          >
+          <input type="text" name="task" class="new-task-input" autocomplete="off" aria-required="true" maxlength="300">
+          <button type="submit" style="position: relative" class="send-bttn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="sendBttn" class="feather feather-send" style="position: absolute; bottom: -7px; right: 15px;"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+      </div>
       <div 
         class="
           new-task-bttn-container
@@ -126,19 +175,18 @@
           self-center
           shadow-md
           shadow-black
+          xl:invisible
           "
       >
         <button
           type="button"
           class="js-new-task-bttn"
-          >
+        >
           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
         </button>
       </div>
     </section>
   </main>
-  <script type="module" src="/scripts/mobile/index/showInput.js"></script>
-  <script type="module" src="/scripts/mobile/sidebar/openSidebar.js"></script>
-  <script type="module" src="/scripts/mobile/sidebar/populateSidebar.js"></script>
+  <script type="module" src="/scripts/index.js"></script>
 </body>
 </html>

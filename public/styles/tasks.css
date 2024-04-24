@@ -1,0 +1,62 @@
+.task-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background-color: #1A2B29;
+  width: 343px;
+  height: auto;
+  min-height: 60px;
+  border-radius: 8px;
+  padding: 6px 16px;
+  margin: 6px auto;
+  justify-content: center;
+  align-items: center;
+  text-wrap: wrap;
+  word-break: break-word;
+}
+
+.task-title {
+  display: flex;
+  align-items: center;
+  padding: 2px 0;
+  width: 221px;
+  height: auto;
+  min-height: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  overflow-y: auto;
+}
+
+.check-bttn {
+  background-color: transparent;
+  width: 45px;
+  height: 45px;
+  outline: black solid 1.9px;
+  border-radius: 16px;
+  margin-left: auto;
+}
+
+.svg {
+  position: absolute;
+  top: 20%;
+}
+
+@media (min-width: 640px) {
+  .list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .task-container {
+    width: 85%;
+    height: auto;
+    min-height: 60px;
+  }
+  
+  .task-title {
+    width: 80%;
+    height: auto;
+    min-height: 40px;
+  }
+}

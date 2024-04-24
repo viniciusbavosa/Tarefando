@@ -32,7 +32,17 @@
   box-shadow: 0px 2px 2px #000;
 }
 
-.onfocus {
+input:focus {
   background-color: #2F2F2F;
   outline: 1px solid white;
+}
+
+.input-invalid {
+  outline:1px solid red;
+}
+
+@media (min-width: 640px) {
+  .new-task-input {
+    width: 75vw;
+  }
 }
