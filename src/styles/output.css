@@ -554,6 +554,10 @@ video {
   --tw-contain-style:  ;
 }
 
+.visible {
+  visibility: visible;
+}
+
 .invisible {
   visibility: hidden;
 }
@@ -568,6 +572,22 @@ video {
 
 .top-\[90\%\] {
   top: 90%;
+}
+
+.left-\[80\%\] {
+  left: 80%;
+}
+
+.left-\[90\%\] {
+  left: 90%;
+}
+
+.left-\[89\%\] {
+  left: 89%;
+}
+
+.left-\[88\%\] {
+  left: 88%;
 }
 
 .z-10 {
