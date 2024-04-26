@@ -5,6 +5,7 @@ import getDaytime from "./date-time-info/daytime.js";
 import createAndStoreTask from "./task/createAndStoreTask.js";
 import displaySidebar from "./sidebar/displaySidebar.js";
 import displaySVG from "./task/displaySVG.js";
+import toggleMode from "./light-mode/toggleMode.js"
 
 const sendButton = document.querySelector('#sendBttn');
 
@@ -33,3 +34,4 @@ sendButton.addEventListener('click', (event) => {
 
 // Display sidebar when clicked
 displaySidebar();
+toggleMode();

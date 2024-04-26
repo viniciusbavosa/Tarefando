@@ -1,3 +1,13 @@
 @import "tailwindcss/base";
-@import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --light-background: 245 245 245; /*cinza claro */
+    --green-background: 0 69 61; /* verde do light mode 00453D */
+    --dark-green: 26 43 41; /*verde do dark mode 1A2B29 */
+    --text-color: 0 69 61; /*mesmo verde do light mode 00453D */
+    --deep-grey: 30 30 30; /*cinza da sidebar do dark mode 1E1E1E */
+    --light-grey: 47 47 47 /* 2F2F2F */
+  }
+}

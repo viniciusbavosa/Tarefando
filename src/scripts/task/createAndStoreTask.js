@@ -13,9 +13,8 @@ inputTask.addEventListener('keydown', (event) => {
   }
 });
 
-export default async function createAndStoreTask(event) {
-  try {
-  
+export default function createAndStoreTask(event) {
+
   // Stores user input
   const inputTaskValue = inputTask.value
 
@@ -28,32 +27,16 @@ export default async function createAndStoreTask(event) {
     inputTask.classList.remove('input-invalid');
   }
   
-  // Sends a request to the server with the user's input value
-  const response = await fetch('/', {
-    method: "post",
-    mode: "same-origin",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify( { inputTaskValue })
-  });
-
-  // Stores server response
-  const result = await response.json();
- 
-  // Stores validated and sanitized input
-  const taskSanitized = result.inputTaskValue
-
-  // Stores id
-  const id = result.id;
+  // Generates random ID
+  const id = crypto.randomUUID();
 
   // Stores timestamps
   const timestamp = setTimeStamps();
   
   // Stores new task in localStorage
-  localStorage.setItem(`${id}`, JSON.stringify(taskSanitized));
+  localStorage.setItem(`${id}`, JSON.stringify(inputTaskValue));
 
-  createTaskElement(taskSanitized, id, timestamp);
+  createTaskElement(inputTaskValue, id, timestamp);
 
   // Reset the input field to blank
   inputTask.value = '';
@@ -62,8 +45,5 @@ export default async function createAndStoreTask(event) {
   newTaskBttnContainer.classList.remove('invisible');
   newTaskInputContainer.classList.add('invisible');
 
-  } catch (err) {
-    console.error("Error", err);
-  }
 };
 

@@ -7,7 +7,7 @@ function createTaskElement(value, id, timestamp) {
 
     const list = document.querySelector('.list');
     const newElement = document.createElement('li');
-    newElement.classList.add('task-container', 'animate__animated', 'animate__fadeIn');
+    newElement.classList.add('task-container', 'bg-green', 'animate__animated', 'animate__fadeIn');
   
     newElement.innerHTML = `<p
       class="task-title"

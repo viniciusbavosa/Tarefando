@@ -6,7 +6,7 @@ const driver_fx = await new Builder().forBrowser(Browser.FIREFOX).build();
 async function sendTaskTest(driver) {
   try {
   
-    await driver.get('http://localhost:5000/');
+    await driver.get('http://127.0.0.1:5500/index.html');
     await driver.manage().window().setRect({ width: 639, height: 800 }); // Configura o tamanho da tela
     await driver.navigate().refresh(); //Atualiza a página
     const button = driver.findElement(By.className('new-task-bttn-container'));
