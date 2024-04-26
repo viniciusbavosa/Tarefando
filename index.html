@@ -14,16 +14,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>Tarefando - Inicio</title>
 </head>
-<body>
+<body class="overflow-x-hidden">
   <main 
     class="
       main-container
-      h-screen
-      w-screen
       relative
       flex
+      h-fit
+      w-screen
       bg-transparent
-      overflow-clip
       "
   >
     <section
@@ -31,14 +30,19 @@
         homepage-container
         flex
         flex-col
+        h-fit
         w-screen
-        h-full
         bg-light
        dark:bg-black
-        
       "
     >
-      <aside class="sidebar bg-dark-green dark:bg-dark-grey">
+      <aside 
+        class="
+          sidebar 
+          bg-dark-green 
+          dark:bg-dark-grey
+          "
+      >
         <ul class="menu">
           <a href="/">
             <li>Início</li>
@@ -53,7 +57,11 @@
             <li>Preferências</li>
           </a>
         </ul>
-        <button type="button" class="js-create-collection-bttn create-collection-bttn-container">
+        <button type="button" 
+          class="
+            js-create-collection-bttn 
+            create-collection-bttn-container"
+        >
           <div class="collection-bttn">
             <p>
             Criar coleção
@@ -67,6 +75,7 @@
           relative
           flex
           flex-row
+          w-screen
           h-[66px]
           justify-between
           "
@@ -79,7 +88,7 @@
             flex-none
             z-10
             "
-            >
+        >
           <button 
             class="
             pr-4
@@ -96,7 +105,7 @@
             dark:stroke-white
               feather feather-menu
             "
-            >
+          >
             <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
         </div>
@@ -105,19 +114,19 @@
             dark-mode-container 
             relative
             "
-            >
+        >
           <div
             class="
               moon-container
               py-5
               sm:px-4
               "
-              >
+          >
             <button
               class="
               pr-4
               "
-              >
+            >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="
                 moon-icon
@@ -151,7 +160,7 @@
                 h-[24px]
                 sm:w-[32px]
                 sm:h-[32px]
-              stroke-green
+               stroke-green
               dark:stroke-white
                 feather feather-sun
                 "
@@ -168,13 +177,20 @@
           flex-wrap
           mx-4
           my-3
-          w-screen
+          w-auto
           h-auto
           text-text-green
         dark:text-white
         "
       >
-        <p class="today-date text-[16px] sm:text-[18px] md:text-[22px]"></p>
+        <p 
+          class="
+            inline
+            today-date 
+            text-[16px] 
+            sm:text-[18px] 
+            md:text-[22px]
+            "></p>
         <h1
           class="
             body-title
@@ -194,13 +210,18 @@
         class="
           body-container
           w-screen
-          h-screen
+          h-full
           flex
           flex-col
           relative
+          overflow-y-auto
           "
       >
-        <div class="list-container">
+        <div 
+          class="
+            list-container 
+            "
+            >
           <ul class="list"></ul>
         </div>
         <div class="svg-container flex invisible">
@@ -237,13 +258,13 @@
           new-task-bttn-container
           bg-green
           dark:bg-black
+          dark:outline
+          dark:outline-1
+        dark:outline-white
           inline-flex
           flex-row
           flex-nowrap
-          outline
-          outline-1
-        dark:outline-white
-          absolute
+          fixed
           w-[46px]
           h-[46px]
           top-[90%]

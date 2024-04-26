@@ -573,6 +573,10 @@ video {
   visibility: hidden;
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -589,6 +593,22 @@ video {
   top: 90%;
 }
 
+.top-\[95\%\] {
+  top: 95%;
+}
+
+.top-\[105\%\] {
+  top: 105%;
+}
+
+.top-\[200\%\] {
+  top: 200%;
+}
+
+.top-\[500\%\] {
+  top: 500%;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -601,6 +621,10 @@ video {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+
+.inline {
+  display: inline;
 }
 
 .flex {
@@ -627,12 +651,13 @@ video {
   height: auto;
 }
 
-.h-full {
-  height: 100%;
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
-.h-screen {
-  height: 100vh;
+.h-full {
+  height: 100%;
 }
 
 .w-\[24px\] {
@@ -641,6 +666,10 @@ video {
 
 .w-\[46px\] {
   width: 46px;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .w-screen {
@@ -679,8 +708,8 @@ video {
   align-self: center;
 }
 
-.overflow-clip {
-  overflow: clip;
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 
 .text-pretty {
@@ -691,9 +720,9 @@ video {
   border-radius: 0.75rem;
 }
 
-.bg-\[\#00453D\] {
+.bg-dark-green {
   --tw-bg-opacity: 1;
-  background-color: rgb(0 69 61 / var(--tw-bg-opacity));
+  background-color: rgb(var(--dark-green) / var(--tw-bg-opacity));
 }
 
 .bg-green {
@@ -708,11 +737,6 @@ video {
 
 .bg-transparent {
   background-color: transparent;
-}
-
-.bg-dark-green {
-  --tw-bg-opacity: 1;
-  background-color: rgb(var(--dark-green) / var(--tw-bg-opacity));
 }
 
 .stroke-green {
@@ -772,14 +796,6 @@ video {
 .outline-none {
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.outline {
-  outline-style: solid;
-}
-
-.outline-1 {
-  outline-width: 1px;
 }
 
 .focus\:bg-\[\#0E3732\]:focus {
@@ -857,13 +873,24 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.dark\:outline-white:where(.dark, .dark *) {
-  outline-color: #FFFFFF;
+.dark\:outline:where(.dark, .dark *) {
+  outline-style: solid;
 }
 
-.dark\:focus\:bg-\[\#2F2F2F\]:focus:where(.dark, .dark *) {
-  --tw-bg-opacity: 1;
-  background-color: rgb(47 47 47 / var(--tw-bg-opacity));
+.dark\:outline-1:where(.dark, .dark *) {
+  outline-width: 1px;
+}
+
+.dark\:outline:where(.dark, .dark *) {
+  outline-style: solid;
+}
+
+.dark\:outline-1:where(.dark, .dark *) {
+  outline-width: 1px;
+}
+
+.dark\:outline-white:where(.dark, .dark *) {
+  outline-color: #FFFFFF;
 }
 
 .dark\:focus\:bg-light-grey:focus:where(.dark, .dark *) {
