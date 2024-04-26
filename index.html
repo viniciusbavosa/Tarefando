@@ -14,16 +14,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <title>Tarefando - Inicio</title>
 </head>
-<body>
+<body class="overflow-x-hidden">
   <main 
     class="
       main-container
-      h-screen
-      w-screen
       relative
       flex
+      h-auto
+      w-screen
       bg-transparent
-      overflow-clip
+      overflow-x-hidden
       "
   >
     <section
@@ -31,14 +31,13 @@
         homepage-container
         flex
         flex-col
+        h-auto
         w-screen
-        h-full
         bg-light
        dark:bg-black
-        
       "
     >
-      <aside class="sidebar bg-dark-green dark:bg-dark-grey">
+      <aside class="sidebar bg-dark-green dark:bg-dark-grey overflow-x-hidden">
         <ul class="menu">
           <a href="/">
             <li>Início</li>
@@ -67,6 +66,7 @@
           relative
           flex
           flex-row
+          w-screen
           h-[66px]
           justify-between
           "
@@ -168,13 +168,20 @@
           flex-wrap
           mx-4
           my-3
-          w-screen
+          w-auto
           h-auto
           text-text-green
         dark:text-white
         "
       >
-        <p class="today-date text-[16px] sm:text-[18px] md:text-[22px]"></p>
+        <p 
+          class="
+            inline
+            today-date 
+            text-[16px] 
+            sm:text-[18px] 
+            md:text-[22px]
+            "></p>
         <h1
           class="
             body-title
@@ -194,13 +201,13 @@
         class="
           body-container
           w-screen
-          h-screen
+          h-auto
           flex
           flex-col
           relative
           "
       >
-        <div class="list-container">
+        <div class="list-container overflow-scroll">
           <ul class="list"></ul>
         </div>
         <div class="svg-container flex invisible">
@@ -240,10 +247,7 @@
           inline-flex
           flex-row
           flex-nowrap
-          outline
-          outline-1
-        dark:outline-white
-          absolute
+          fixed
           w-[46px]
           h-[46px]
           top-[90%]
