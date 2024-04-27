@@ -21,7 +21,6 @@ export default {
   corePlugins: {
     aspectRatio: false,
   },
-  plugins: [],
   darkMode: 'selector',
 }
 

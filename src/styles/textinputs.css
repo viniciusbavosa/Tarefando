@@ -16,12 +16,12 @@
 
 .create-collection-input-container {
   position: fixed;
-  top: 90.5%;
-  left: 5%;
+  top: 90%;
+  left: 2%;
 }
 
 .create-collection-input {
-  background-color: #3F3F3F;
+  background-color: #00453D;
   color: white;
   outline: none;
   border-radius: 12px;
