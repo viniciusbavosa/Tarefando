@@ -9,4 +9,9 @@ export default function showInput() {
     newTaskInputContainer.classList.remove('invisible');
     input.focus();
   });
-};
+  
+  input.addEventListener('blur', () => {
+    newTaskBttnContainer.classList.remove('invisible');
+    newTaskInputContainer.classList.add('invisible');
+  });
+}

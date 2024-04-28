@@ -1,7 +1,8 @@
-import { displayCollectionInput } from "../dynamicContent/dynamicHTML.js"
 const menuIcon = document.querySelector('.menu-icon-container');
 const mainContainer = document.querySelector('.main-container');
 const collectionBttn = document.querySelector('.js-create-collection-bttn');
+const collectionInputContainer = document.querySelector('.create-collection-input-container');
+const collectionInput = document.querySelector('.create-collection-input');
 const sidebar = document.querySelector('.sidebar');
 
 export default function displaySidebar() {
@@ -11,7 +12,7 @@ export default function displaySidebar() {
   mainContainer.insertAdjacentElement('afterbegin',  overlay);
   let clicks = 0;
   
-  
+  // Handles sidebar close/open icon behavior
   menuIcon.addEventListener('click', () => {
     clicks += 1
     sidebar.classList.toggle('display-sidebar');
@@ -25,10 +26,15 @@ export default function displaySidebar() {
     };
   });
   
-  
-  if (collectionBttn) {
-    collectionBttn.addEventListener('click', () => {
-      collectionBttn.outerHTML = displayCollectionInput();
+  collectionBttn.addEventListener('click', () => {
+    collectionBttn.classList.add('invisible');
+    collectionInputContainer.classList.remove('invisible');
+    collectionInput.focus();
     });
-  }
+
+    collectionInput.addEventListener('blur', () => {
+      collectionBttn.classList.remove('invisible');
+      collectionInputContainer.classList.add('invisible');
+    });
+  
 }

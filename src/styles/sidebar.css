@@ -47,7 +47,7 @@
 
 .create-collection-bttn-container {
   position: absolute;
-  top: 90%;
+  top: 93%;
   left: 11%;
   background-color: #00453D;
   color: #F0F0F0;
@@ -59,6 +59,12 @@
   box-shadow: 0px 2px 2px #000;
   justify-content: center;
   align-items: center;
+}
+
+.collection-send-svg {
+  position: absolute;
+  top: 17%;
+  left: 49%;
 }
 
 @media (min-width: 640px) {
