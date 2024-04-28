@@ -41,3 +41,9 @@
 .input-invalid {
   outline:1px solid red;
 }
+
+@media (max-width: 639px) {
+  .create-collection-input-container {
+    top: 90%;
+  }
+}

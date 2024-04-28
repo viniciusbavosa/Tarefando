@@ -15,7 +15,7 @@ const mediaQuery = window.matchMedia('(max-width: 1024px)');
 // Display main input
 showInput();
 
-// When the page loads, calls the function
+// When the page loads, calls function
 window.onload = displayAllTasks();
 
 // Display current date

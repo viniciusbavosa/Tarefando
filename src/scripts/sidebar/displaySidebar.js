@@ -30,11 +30,11 @@ export default function displaySidebar() {
     collectionBttn.classList.add('invisible');
     collectionInputContainer.classList.remove('invisible');
     collectionInput.focus();
-    });
 
-    collectionInput.addEventListener('blur', () => {
+  // After 10 seconds without changes, returns to original state
+    setTimeout(() => {
       collectionBttn.classList.remove('invisible');
-      collectionInputContainer.classList.add('invisible');
+        collectionInputContainer.classList.add('invisible');
+    }, 10000);
     });
-  
 }

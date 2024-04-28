@@ -8,10 +8,11 @@ export default function showInput() {
     newTaskBttnContainer.classList.add('invisible');
     newTaskInputContainer.classList.remove('invisible');
     input.focus();
-  });
-  
-  input.addEventListener('blur', () => {
+
+  // After 10 seconds without changes, returns to original state
+  setTimeout(() => {
     newTaskBttnContainer.classList.remove('invisible');
     newTaskInputContainer.classList.add('invisible');
+  }, 10000);
   });
 }
