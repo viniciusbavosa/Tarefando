@@ -19,6 +19,8 @@
 }
 .create-collection-input-container {
   position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
   top: 93%;
   left: 15%;
