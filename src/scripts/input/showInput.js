@@ -9,10 +9,17 @@ export default function showInput() {
     newTaskInputContainer.classList.remove('invisible');
     input.focus();
 
-  // After 10 seconds without changes, returns to original state
-  setTimeout(() => {
-    newTaskBttnContainer.classList.remove('invisible');
-    newTaskInputContainer.classList.add('invisible');
-  }, 10000);
+    let timeoutId;
+    
+    input.addEventListener('input', () => {
+      // Interrupts the 10-second countdown every time the user types something
+      clearTimeout(timeoutId);
+      
+      // After 10 seconds, if nothing was type in, returns to the original state
+      timeoutId = setTimeout(() => {
+        newTaskBttnContainer.classList.remove('invisible');
+        newTaskInputContainer.classList.add('invisible');
+      }, 10000);
+    });
   });
 }

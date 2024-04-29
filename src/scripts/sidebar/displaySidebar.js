@@ -14,7 +14,7 @@ export default function displaySidebar() {
   
   // Handles sidebar close/open icon behavior
   menuIcon.addEventListener('click', () => {
-    clicks += 1
+    clicks++
     sidebar.classList.toggle('display-sidebar');
     
     if (clicks % 2 === 0) {
@@ -31,10 +31,17 @@ export default function displaySidebar() {
     collectionInputContainer.classList.remove('invisible');
     collectionInput.focus();
 
-  // After 10 seconds without changes, returns to original state
-    setTimeout(() => {
-      collectionBttn.classList.remove('invisible');
+    let timeoutId;
+    
+    collectionInput.addEventListener('input', () => {
+      // Interrupts the 10-second countdown every time the user types something
+      clearTimeout(timeoutId);
+      
+      // After 10 seconds, if nothing was type in, returns to the original state
+      timeoutId = setTimeout(() => {
+        collectionBttn.classList.remove('invisible');
         collectionInputContainer.classList.add('invisible');
-    }, 10000);
+      }, 10000);
     });
+  });
 }

@@ -28,7 +28,6 @@ getDaytime();
 // Create and save user's task in localStorage
 sendButton.addEventListener('click', (event) => {
   createAndStoreTask(event);
- 
   sessionStorage.setItem('svgHidden', 'true');
 });
 
