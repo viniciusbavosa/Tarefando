@@ -17,35 +17,7 @@
 .new-task-input:focus {
   background-color: #2F2F2F;
 }
-.create-collection-input-container {
-  position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  top: 93%;
-  left: 15%;
-}
-
-.create-collection-input {
-  background-color: #00453D;
-  color: white;
-  outline: none;
-  border-radius: 12px;
-  padding: 8px 35px 8px 8px;
-  width: 65%;
-  box-shadow: 0px 2px 2px #000;
-}
-
-.create-collection-input:focus {
-  background-color: #0E3732;
-}
 
 .input-invalid {
   outline:1px solid red;
-}
-
-@media (max-width: 639px) {
-  .create-collection-input-container {
-    top: 90%;
-  }
 }

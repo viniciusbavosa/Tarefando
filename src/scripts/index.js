@@ -1,5 +1,6 @@
 import showInput from "./input/showInput.js"
 import { displayAllTasks } from "./task/displayAllTasks.js";
+import deleteAllTasks from "./task/deleteAllTasks.js";
 import displayCurrentDate from "./date-time-info/todayDate.js";
 import getDaytime from "./date-time-info/daytime.js";
 import createAndStoreTask from "./task/createAndStoreTask.js";
@@ -8,6 +9,7 @@ import displaySVG from "./task/displaySVG.js";
 import toggleMode from "./light-mode/toggleMode.js"
 
 const sendButton = document.querySelector('#sendBttn');
+const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
 
 // Checks if the devide has a max-width of 768px
 const mediaQuery = window.matchMedia('(max-width: 1024px)');
@@ -15,8 +17,13 @@ const mediaQuery = window.matchMedia('(max-width: 1024px)');
 // Display main input
 showInput();
 
-// When the page loads, calls function
+// When the page loads, display all tasks
 window.onload = displayAllTasks();
+
+// Delete all tasks
+deleteAllTasksBttn.addEventListener('click', () => {
+  deleteAllTasks();
+});
 
 // Display current date
 const dateHTML = document.querySelector('.today-date');

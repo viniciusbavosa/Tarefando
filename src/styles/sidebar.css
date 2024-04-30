@@ -51,37 +51,9 @@
   justify-content: space-evenly;
 }
 
-.create-collection-bttn-container {
-  position: absolute;
-  top: 93%;
-  left: 11%;
-  background-color: #00453D;
-  color: #F0F0F0;
-  display: flex;
-  flex-flow: row nowrap;
-  width: 75%;
-  height: 46px;
-  border-radius: 12px;
-  box-shadow: 0px 2px 2px #000;
-  justify-content: center;
-  align-items: center;
-}
-
-.collection-send-svg {
-  position: absolute;
-  top: 17%;
-  left: 49%;
-}
-
 @media (min-width: 640px) {
   .sidebar {
     width: 30%;
     max-width: 250px;
-  }
-}
-
-@media (max-width: 639px) {
-  .create-collection-bttn-container {
-    top: 90%;
   }
 }
