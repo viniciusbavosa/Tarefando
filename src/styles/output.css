@@ -659,6 +659,11 @@ video {
   height: 100vh;
 }
 
+.h-fit {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -908,6 +913,21 @@ video {
 
   .xl\:invisible {
     visibility: hidden;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:w-fit {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .\32xl\:w-1\/4 {
+    width: 25%;
+  }
+
+  .\32xl\:w-1\/5 {
+    width: 20%;
   }
 }
 
