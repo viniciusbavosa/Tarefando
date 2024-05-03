@@ -1,5 +1,5 @@
 // import { json } from "express";
-import { createTaskElement } from "../dynamicContent/dynamicHTML.js";
+import { createTaskElement } from "../dynamic-content/dynamicHTML.js";
 import setTimeStamps from "../date-time-info/timeStamps.js";
 
 const newTaskBttnContainer = document.querySelector('.new-task-bttn-container');

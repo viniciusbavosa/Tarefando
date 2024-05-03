@@ -1,4 +1,4 @@
-import { createTaskElement } from "../dynamicContent/dynamicHTML.js";
+import { createTaskElement } from "../dynamic-content/dynamicHTML.js";
 import { deleteTask } from "./deleteTask.js";
 import displaySVG from "./displaySVG.js";
 

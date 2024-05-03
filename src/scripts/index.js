@@ -7,7 +7,7 @@ import getDaytime from "./date-time-info/daytime.js";
 import createAndStoreTask from "./task/createAndStoreTask.js";
 import displaySidebar from "./sidebar/displaySidebar.js";
 import displaySVG from "./task/displaySVG.js";
-import toggleMode from "./light-mode/toggleMode.js"
+import toggleMode from "./dark-mode/toggleMode.js"
 
 const sendButton = document.querySelector('#sendBttn');
 const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
