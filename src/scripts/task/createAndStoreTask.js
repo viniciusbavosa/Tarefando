@@ -32,7 +32,7 @@ export default function createAndStoreTask(event) {
 
   // Stores timestamps
   const timestamp = setTimeStamps();
-  
+
   // Stores new task in localStorage
   localStorage.setItem(`${id}`, JSON.stringify(inputTaskValue));
 

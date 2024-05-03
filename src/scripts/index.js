@@ -1,6 +1,7 @@
 import showInput from "./input/showInput.js"
 import { displayAllTasks } from "./task/displayAllTasks.js";
 import deleteAllTasks from "./task/deleteAllTasks.js";
+import editTask from "./task/editTask.js";
 import displayCurrentDate from "./date-time-info/todayDate.js";
 import getDaytime from "./date-time-info/daytime.js";
 import createAndStoreTask from "./task/createAndStoreTask.js";
@@ -24,6 +25,9 @@ window.onload = displayAllTasks();
 deleteAllTasksBttn.addEventListener('click', () => {
   deleteAllTasks();
 });
+
+// Edit tasks
+editTask();
 
 // Display current date
 const dateHTML = document.querySelector('.today-date');

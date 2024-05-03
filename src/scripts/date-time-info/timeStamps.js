@@ -8,6 +8,6 @@ export default function setTimeStamps() {
     minute: 'numeric',
     second: 'numeric',
     timeZone: 'America/Sao_Paulo' 
-  }).format(date)
+  }).format(date);
   return localDate;
 }
