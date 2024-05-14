@@ -2,7 +2,10 @@
   "name": "pai-organiza",
   "version": "1.0.0",
   "description": "Um gerenciador de tarefas dinamico e eficiente criado para ajudar o meu pai a organizar as tarefas do dia.",
-  "main": "app.js",
+  "main": "index.html",
+  "engines": {
+    "node": ">=14"
+  },
   "type": "module",
   "scripts": {
     "tw": "npx tailwindcss -i ./tailwind/input.css -o ./src/styles/output.css --watch",

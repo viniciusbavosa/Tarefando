@@ -4,15 +4,7 @@
   height: 100%;
   position: absolute;
   display: none;
-  z-index: 5;
-}
-
-.display-sidebar {
-  display: flex;
-  -webkit-animation: slideInLeft;
-          animation: slideInLeft;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
+  z-index: 2;
 }
 
 .overlay {
@@ -21,20 +13,9 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #00000080;
   z-index: 1;
   display: none;
-  -webkit-animation: fadeIn;
-          animation: fadeIn;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-}
-
-.close-sidebar {
-  -webkit-animation: slideOutLeft;
-          animation: slideOutLeft;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
 }
 
 .menu {

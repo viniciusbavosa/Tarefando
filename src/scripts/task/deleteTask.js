@@ -18,6 +18,11 @@ export function deleteTask() {
       checkBttn.addEventListener('click', () => {
         const id = checkBttn.dataset.id
         localStorage.removeItem(id);
+        localStorage.removeItem(`${id}-details`);
+        localStorage.removeItem(`${id}-created-date`);
+        localStorage.removeItem(`${id}-details-updated-date`);
+
+
 
         animateDeleteBttn(checkBttn);
       });

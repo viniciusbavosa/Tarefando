@@ -1,4 +1,3 @@
-
 export default function displayCurrentDate() {
   const todayDate = new Date();
   

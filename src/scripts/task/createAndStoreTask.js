@@ -35,9 +35,9 @@ export default function createAndStoreTask(event) {
 
   // Stores new task in localStorage
   localStorage.setItem(`${id}`, JSON.stringify(inputTaskValue));
+  localStorage.setItem(`${id}-created-date`, JSON.stringify(timestamp));
 
   createTaskElement(inputTaskValue, id, timestamp);
-
   // Reset the input field to blank
   inputTask.value = '';
 

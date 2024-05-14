@@ -24,9 +24,23 @@
       bg-transparent
       "
   >
+  <div class="overlay animate__animated"></div>
+  <div 
+    class="
+      overlay-detail-modal
+      absolute
+      w-[100%]
+      h-[100%]
+      bg-[#00000080]
+      z-10
+      hidden 
+      animate__animated
+      "
+  ></div>
     <section
       class="
         homepage-container
+        relative
         flex
         flex-col
         h-screen
@@ -44,6 +58,7 @@
           flex-col 
           bg-dark-green 
           dark:bg-dark-grey
+          animate__animated
           "
       >
         <ul class="menu">
@@ -198,7 +213,7 @@
             py-5 
             px-4 
             flex-none
-            z-10
+            z-[3]
             "
         >
           <button 

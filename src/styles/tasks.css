@@ -18,13 +18,17 @@
   display: flex;
   align-items: center;
   padding: 2px 0;
-  width: 221px;
+  width: 210px;
   height: auto;
   min-height: 40px;
   color: white;
   font-size: 20px;
   font-weight: 500;
   overflow-y: auto;
+}
+
+.task-title:focus {
+  outline: none;
 }
 
 .check-bttn {
@@ -55,7 +59,7 @@
   }
   
   .task-title {
-    width: 80%;
+    width: 70%;
     height: auto;
     min-height: 40px;
   }

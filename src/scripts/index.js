@@ -7,7 +7,8 @@ import getDaytime from "./date-time-info/daytime.js";
 import createAndStoreTask from "./task/createAndStoreTask.js";
 import displaySidebar from "./sidebar/displaySidebar.js";
 import displaySVG from "./task/displaySVG.js";
-import toggleMode from "./dark-mode/toggleMode.js"
+import toggleMode from "./dark-mode/toggleMode.js";
+import displayDetails from "./task/detail-modal/displayDetails.js";
 
 const sendButton = document.querySelector('#sendBttn');
 const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
@@ -41,6 +42,9 @@ sendButton.addEventListener('click', (event) => {
   createAndStoreTask(event);
   sessionStorage.setItem('svgHidden', 'true');
 });
+
+// Open/close detail modal
+displayDetails();
 
 // Display sidebar when clicked
 displaySidebar();
