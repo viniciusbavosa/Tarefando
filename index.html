@@ -43,8 +43,8 @@
         relative
         flex
         flex-col
-        h-screen
-        w-screen
+        h-full
+        w-full
         bg-light
        dark:bg-black
        overflow-x-hidden
@@ -202,7 +202,7 @@
           relative
           flex
           flex-row
-          w-screen
+          w-full
           h-[66px]
           justify-between
           "
@@ -339,7 +339,7 @@
       <div 
         class="
           body-container
-          w-screen
+          w-full
           h-full
           flex
           flex-col
@@ -363,13 +363,24 @@
           new-task-input-container 
           animate__animated 
           animate__fadeIn
+          m-auto
+          fixed
+          bottom-9
+          left-[10%]
           invisible
           xl:visible
           "
           >
           <input type="text" name="task" 
             class="
-              new-task-input 
+              new-task-input
+              text-white
+              rounded-xl
+              shadow
+              w-[75vw]
+              py-2
+              pr-8
+              pl-2
               outline-none
               dark:focus:outline
               dark:focus:outline-1
@@ -398,7 +409,7 @@
           fixed
           w-[46px]
           h-[46px]
-          top-[90%]
+          bottom-9
           rounded-xl
           justify-center
           self-center
@@ -426,7 +437,7 @@
           text-[10px]
           md:text-xs
           m-auto
-          top-[96%]
+          bottom-2
           md:m-auto
         dark:text-white
       "
@@ -435,8 +446,7 @@
         class="
         m-auto
         "
-        >&copy; Vinicius Bavosa 2024. Todos os direitos reservados.</p>
-        <p class="m-auto text-center">Sons do Facebook Sound Kit © Meta Platforms, Inc. <a href="https://design.facebook.com/soundkitlicense/" target="_blank">Licença</a> em vigor.</p>
+        >&copy; 2024 Vinicius Bavosa. Todos os direitos reservados.</p>
       </footer>
     </section>
   </main>
