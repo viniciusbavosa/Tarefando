@@ -8,14 +8,17 @@ function createTaskElement(value, id, timestamp) {
     const list = document.querySelector('.list');
     const newElement = document.createElement('li');
     newElement.classList.add('task-container', 'bg-green', 'animate__animated', 'animate__fadeIn');
+    newElement.setAttribute('title', 'Clique para abrir detalhes da tarefa');
   
     newElement.innerHTML = `<p
       class="task-title"
+      title="Clique para editar"
       contenteditable="plaintext-only"
       data-id="${id}"
       data-timestamp="${timestamp}"
       >${value}</p>
       <button
+      title="Clique para excluir"
       data-id="${id}"
       role="checkbox"
       aria-checked="false"
@@ -91,12 +94,23 @@ function createDetailModal(id, value) {
       class="
         detail-modal-title
         text-[24px]
+        md:text-[32px]
         truncate
         m-6
       "
     ></p>
-    <button class="detail-modal-close-bttn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-6 feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+    <button class="detail-modal-close-bttn" title="Fechar detalhes da tarefa">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+      class="
+        m-6 
+        feather 
+        feather-x
+        w-[24px] 
+        h-[24px]
+        sm:w-[32px]
+        sm:h-[32px]
+        "
+    ><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
       </svg>
     </button>
   </header>
@@ -120,12 +134,14 @@ function createDetailModal(id, value) {
         placeholder:p-1
         outline-none
         resize-none
+        md:text-[20px]
         dark:bg-black
         dark:placeholder:text-white
       "
       placeholder="Compartilhe mais sobre a tarefa aqui..."
       name="details-text-area"
       autocomplete="off"
+      title="Escreva detalhes sobre a tarefa"
     >${value}</textarea>
     <div 
       class="
@@ -144,12 +160,14 @@ function createDetailModal(id, value) {
         class="
           created-timestamp
           text-[10px]
+          md:text-[14px]
           "
       ></span>
       <span
         class="
           update-timestamp
           text-[10px]
+          md:text-[14px]
           "
       ></span>
     </div>
@@ -168,11 +186,31 @@ function createDetailModal(id, value) {
       dark:border-[#565559]
       "
   >
-    <button class="bookmark-collection">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-6 feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+    <button class="bookmark-collection" title="Adicionar a uma pasta">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+      class="
+        m-6 
+        feather 
+        feather-bookmark
+        w-[24px] 
+        h-[24px]
+        sm:w-[32px]
+        sm:h-[32px]
+        "
+      ><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
     </button>
-    <button class="reminder">
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="m-6 feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+    <button class="reminder" title="Definir lembrete">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+      class="
+        m-6 
+        feather 
+        feather-bell
+        w-[24px] 
+        h-[24px]
+        sm:w-[32px]
+        sm:h-[32px]
+        "
+      ><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
     </button>
   </footer>
 </aside>`;

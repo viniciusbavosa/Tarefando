@@ -14,7 +14,7 @@ export default function displayDetails() {
       task.addEventListener('click', (event) => {
         // Checks if the clicked element was 'li' and not its children
         if (event.target.tagName === "LI") {
-          
+
           // Stores the id of its task
           const taskId = task.firstChild.dataset.id;
           

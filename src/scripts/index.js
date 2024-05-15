@@ -13,8 +13,6 @@ import displayDetails from "./task/detail-modal/displayDetails.js";
 const sendButton = document.querySelector('#sendBttn');
 const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
 
-// Checks if the devide has a max-width of 768px
-const mediaQuery = window.matchMedia('(max-width: 1024px)');
 
 // Display main input
 showInput();

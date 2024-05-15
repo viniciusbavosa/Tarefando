@@ -1,3 +1,6 @@
+import playExpandAudio from "../audio-functios/openModal.js";
+import playCollapseAudio from "../audio-functios/closeModal.js";
+
 const menuIcon = document.querySelector('.menu-icon-container');
 const sidebar = document.querySelector('.sidebar');
 const overlay = document.querySelector('.overlay');
@@ -22,6 +25,7 @@ export default function displaySidebar() {
       overlay.style.display = 'none';
       sidebar.style.display = 'none';
       }, 1000);
+      playExpandAudio();
 
     } else {
       menuIcon.innerHTML = '<button class="pr-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-[24px] h-[24px] sm:w-[32px] sm:h-[32px] feather feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>';
@@ -32,6 +36,7 @@ export default function displaySidebar() {
       sidebar.style.display = 'flex';
       sidebar.classList.remove('animate__slideOutLeft');
       sidebar.classList.add('animate__slideInLeft');
+      playCollapseAudio();
     };
   });
 }
