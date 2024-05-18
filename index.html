@@ -52,12 +52,11 @@
         relative
         flex
         flex-col
-        h-full
         w-full
         bg-light
        dark:bg-black
-       overflow-x-hidden
-       overflow-y-auto
+        overflow-x-hidden
+        overflow-y-auto
       "
     >
       <aside 
@@ -70,6 +69,7 @@
           absolute
           hidden
           z-[2]
+          rounded-r-md
           sm:max-w-[250px] 
           dark:bg-dark-grey
           animate__animated
@@ -84,12 +84,12 @@
             overflow-hidden
             absolute
             text-[22px]
-            h-[30%]
+            gap-y-8
             top-[80px]
             left-[16px]
             justify-between
             sm:top-[90px]
-            md:text-[26px]
+            md:text-[24px]
             "
         >
           <a 
@@ -311,22 +311,24 @@
       >
         <div 
           class="
-            menu-icon-container 
+            sidebar-icon-container 
             py-5 
             px-4 
             flex-none
             z-[3]
+            relative
             "
         >
           <button 
             class="
+            menu-icon-bttn
             pr-4
             "
-            title="Abrir menu"
+            title="Abrir sidebar"
             >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
             class="
-              menu-icon
+              menu-icon-svg
               w-[24px] 
               h-[24px]
               sm:w-[32px]
@@ -338,6 +340,26 @@
           >
             <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
           </button>
+          <button 
+            class="
+              close-icon-bttn
+              absolute
+              left-4
+              pr-4
+              hidden
+              "
+              title="Fechar sidebar"
+          ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+            class="
+              close-icon-svg
+              w-[24px] 
+              h-[24px] 
+              sm:w-[32px] 
+              sm:h-[32px]
+              stroke-white
+              dark:stroke-white 
+              feather 
+              feather-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
         </div>
         <div 
           class="
@@ -442,7 +464,6 @@
         class="
           body-container
           w-full
-          h-full
           flex
           flex-col
           relative
@@ -453,7 +474,7 @@
           class="
             list-container
             "
-            >
+        >
           <ul class="list"></ul>
         </div>
         <div class="svg-container flex invisible">
@@ -541,6 +562,7 @@
           m-auto
           bottom-2
           md:m-auto
+          text-black
         dark:text-white
       "
       >
@@ -548,7 +570,7 @@
         class="
         m-auto
         "
-        >&copy; 2024 Vinicius Bavosa. Todos os direitos reservados.</p>
+        >Vinicius Bavosa &copy; 2024</p>
       </footer>
     </section>
   </main>

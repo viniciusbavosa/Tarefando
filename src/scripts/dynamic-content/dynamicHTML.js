@@ -3,7 +3,6 @@ import displayDetails from "../task/detail-modal/displayDetails.js";
 
 // This file stores HTML elements that are created dynamically with JavaScript
 
-// Create task card
 function createTaskElement(value, id, timestamp) {
     const list = document.querySelector('.list');
     const newElement = document.createElement('li');
@@ -30,8 +29,7 @@ function createTaskElement(value, id, timestamp) {
     displayDetails();
     deleteTask();  
 };
-  
-  // Animate delete button for tasks
+
 function animateDeleteBttn(checkBttn) {
   const svgCheckMark = '<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="position: absolute; right:25px;" class="feather feather-check"><polyline points="20 6 9 17 4 12"/></svg>'
   
@@ -221,5 +219,5 @@ return modal;
 export {
   createTaskElement,
   animateDeleteBttn,
-  createDetailModal
+  createDetailModal,
 };
