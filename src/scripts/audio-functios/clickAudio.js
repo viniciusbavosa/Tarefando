@@ -1,6 +1,6 @@
 export default function playClickAudio() {
   const audio = new Audio();
-  audio.src = './src/scripts/audio/Click.m4a';
+  audio.src = './src/assets/audio/Click.m4a';
   audio.preload = 'auto';
 
   // for legacy browser

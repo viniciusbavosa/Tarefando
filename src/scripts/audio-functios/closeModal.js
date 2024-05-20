@@ -1,6 +1,6 @@
 export default function playCollapseAudio() {
   const audio = new Audio();
-  audio.src = './src/scripts/audio/Collapse.m4a';
+  audio.src = './src/assets/audio/Collapse.m4a';
   audio.preload = 'auto';
 
   // for legacy browser

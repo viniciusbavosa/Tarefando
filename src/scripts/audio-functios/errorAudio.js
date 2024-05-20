@@ -1,6 +1,6 @@
 export default function playErrorAudio() {
   const audio = new Audio();
-  audio.src = './src/scripts/audio/Error.m4a';
+  audio.src = './src/assets/audio/Error.m4a';
   audio.preload = 'auto';
 
    // for legacy browser

@@ -1,6 +1,6 @@
 export default function playExpandAudio() {
   const audio = new Audio();
-  audio.src = './src/scripts/audio/Expand.m4a';
+  audio.src = './src/assets/audio/Expand.m4a';
   audio.preload = 'auto';
 
   // for legacy browser

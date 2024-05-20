@@ -1,6 +1,6 @@
 export default function playSuccessAudio() {
   const audio = new Audio();
-  audio.src = './src/scripts/audio/Complete.m4a';
+  audio.src = './src/assets/audio/Complete.m4a';
   audio.preload = 'auto';
   
   // for legacy browser
