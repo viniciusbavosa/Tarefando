@@ -1,21 +1,19 @@
-import showInput from "./input/showInput.js"
-import { displayAllTasks } from "./task/displayAllTasks.js";
-import deleteAllTasks from "./task/deleteAllTasks.js";
-import editTask from "./task/editTask.js";
-import displayCurrentDate from "./date-time-info/todayDate.js";
-import getDaytime from "./date-time-info/daytime.js";
-import createAndStoreTask from "./task/createAndStoreTask.js";
+import showInput from "./index-page/input/showInput.js"
+import { displayAllTasks } from "./index-page/task/displayAllTasks.js";
+import deleteAllTasks from "./index-page/task/deleteAllTasks.js";
+import editTask from "./index-page/task/editTask.js";
+import displayCurrentDate from "./index-page/date-time-info/todayDate.js";
+import getDaytime from "./index-page/date-time-info/daytime.js";
+import createAndStoreTask from "./index-page/task/createAndStoreTask.js";
 import displaySidebar from "./sidebar/displaySidebar.js";
-import displaySVG from "./task/displaySVG.js";
+import displaySVG from "./index-page/task/displaySVG.js";
 import toggleMode from "./dark-mode/toggleMode.js";
-import displayDetails from "./task/detail-modal/displayDetails.js";
+import displayDetails from "./index-page/task/detail-modal/displayDetails.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-
   const sendButton = document.querySelector('#sendBttn');
   const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
   
-
   // Display main input
   showInput();
   

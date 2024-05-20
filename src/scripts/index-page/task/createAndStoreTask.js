@@ -1,8 +1,8 @@
 // import { json } from "express";
-import { createTaskElement } from "../dynamic-content/dynamicHTML.js";
+import { createTaskElement } from "../../dynamic-content/dynamicHTML.js";
 import setTimeStamps from "../date-time-info/timeStamps.js";
-import playSuccessAudio from "../audio-functios/sucessAudio.js";
-import playErrorAudio from "../audio-functios/errorAudio.js";
+import playSuccessAudio from "../../audio-functios/sucessAudio.js";
+import playErrorAudio from "../../audio-functios/errorAudio.js";
 
 const newTaskBttnContainer = document.querySelector('.new-task-bttn-container');
 const newTaskInputContainer = document.querySelector('.new-task-input-container');

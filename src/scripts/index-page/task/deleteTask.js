@@ -1,4 +1,4 @@
-import { animateDeleteBttn } from "../dynamic-content/dynamicHTML.js";
+import { animateDeleteBttn } from "../../dynamic-content/dynamicHTML.js";
 
 export function deleteTask() {
   const checkBttns = document.querySelectorAll('.check-bttn');

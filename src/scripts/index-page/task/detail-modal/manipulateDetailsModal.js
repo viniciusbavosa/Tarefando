@@ -1,4 +1,4 @@
-import { createDetailModal } from "../../dynamic-content/dynamicHTML.js";
+import { createDetailModal } from "../../../dynamic-content/dynamicHTML.js";
 
 export default function manipulateDetailsModal(taskId, taskValue, detailsValue) {
   const detailsElement = document.querySelector('.detail-modal-container');

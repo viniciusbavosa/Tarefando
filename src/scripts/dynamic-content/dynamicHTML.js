@@ -1,5 +1,5 @@
-import { deleteTask } from "../task/deleteTask.js";
-import displayDetails from "../task/detail-modal/displayDetails.js";
+import { deleteTask } from "../index-page/task/deleteTask.js";
+import displayDetails from "../index-page/task/detail-modal/displayDetails.js";
 
 // This file stores HTML elements that are created dynamically with JavaScript
 
