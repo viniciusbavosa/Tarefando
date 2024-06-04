@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // display all tasks
  displayAllTasks();
+ displaySVG();
   
   // Delete all tasks
   deleteAllTasksBttn.addEventListener('click', () => {
