@@ -1,5 +1,6 @@
 import playExpandAudio from "../audio-functios/openModal.js";
 import playCollapseAudio from "../audio-functios/closeModal.js";
+import togglePageIndicator from "../collection-page/togglePageIndicator.js";
 
 const menuIconBttn = document.querySelector('.menu-icon-bttn');
 const closeIconBttn = document.querySelector('.close-icon-bttn');
@@ -9,7 +10,7 @@ const overlay = document.querySelector('.overlay');
 export default function displaySidebar() {
 
   menuIconBttn.addEventListener('click', () => {
-    if (sidebar.classList.contains('hidden')) {
+    if (!sidebar.checkVisibility()) {
       overlay.classList.remove('animate__fadeOut', 'hidden');
       overlay.classList.add('animate__fadeIn', 'block');
 
@@ -19,6 +20,7 @@ export default function displaySidebar() {
         menuIconBttn.classList.add('hidden');
         closeIconBttn.classList.remove('hidden');
         playExpandAudio();
+        togglePageIndicator();
       }, { once: true })
     }; 
   });
@@ -35,6 +37,7 @@ export default function displaySidebar() {
       closeIconBttn.classList.add('hidden');
       sidebar.classList.add('hidden');
       overlay.classList.add('hidden');
+      togglePageIndicator();
     }, { once: true});
     playCollapseAudio();
   },);

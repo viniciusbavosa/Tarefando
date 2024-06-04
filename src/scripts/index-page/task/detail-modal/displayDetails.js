@@ -1,53 +1,55 @@
+import { createDetailModal } from "../../../dynamic-content/dynamicHTML.js";
 import manipulateDetailsModal from "./manipulateDetailsModal.js";
-import storesDetails from "./storesDetail.js";
-import { displayCreatedDate, displayUpdateDate } from "./date-time-info-details/timestamps-details.js";
+import { displayCreatedDate } from "./date-time-info-details/timestamps-details.js";
+import { openDB } from "../../../../boilerplate/openDatabase.js";
+import getTaskDetail from "./getTaskDetail.js";
+import displayFoldersAvailable from "./save-task-to-folder/displayChipsModal.js";
+import { displayUpdatedDate } from "./date-time-info-details/timestamps-details.js";
 
 export default function displayDetails() {
+  const homepage = document.querySelector('.homepage-container');
   const tasks = document.querySelectorAll('.task-container');
   const overlay = document.querySelector('.overlay-detail-modal');
-  
 
- 
   // Checks if there's any task in the DOM, if true, iterates through it and adds an event listener to each one
   if (tasks) {
     tasks.forEach((task) => {
       task.addEventListener('click', (event) => {
+
         // Checks if the clicked element was 'li' and not its children
         if (event.target.tagName === "LI") {
 
-          // Stores the id of its task
+          // Stores task's id
           const taskId = task.firstChild.dataset.id;
+          const callbackDetails = (details) => {
+            homepage.insertAdjacentHTML('beforeend', createDetailModal(taskId, details));
+            displayCreatedDate(taskId);
+          };
           
-          // Stores the value of the task
-          const taskValue = localStorage.getItem(`${taskId}`);
-          const taskValueFormated = JSON.parse(taskValue); // Converts from JSON to string
+          getTaskDetail(taskId, callbackDetails);
+
+          const request = openDB('TasksDatabase');
           
+          request.onerror = () => {
+            console.log("Erro ao abrir DB" + request.error)
+          };
+          
+          request.onsuccess = () => {
+            const db = request.result
+              .transaction("Tasks", "readwrite")
+              .objectStore("Tasks")
+              .get(taskId)
+              .onsuccess = (event) => {
+                const { title } = event.target.result.body;
+                manipulateDetailsModal(taskId, title);
+                displayFoldersAvailable();
+                displayUpdatedDate()
+              };
+            };
+        
           // Display overlay
           overlay.classList.remove('animate__fadeOut', 'hidden');
           overlay.classList.add('animate__fadeIn', 'block');
-          
-          // Stores details modal value
-          const detailsValue = localStorage.getItem(`${taskId}-details`);
-          const detailsValueFormated = JSON.parse(detailsValue);
-
-          // Display update date if exists
-          function hasValueInLocalStorage() {
-            const updatedElement = document.querySelector('.update-timestamp');
-            const updatedOn = localStorage.getItem(`${taskId}-details-updated-date`);
-            const updateOnFormated = JSON.parse(updatedOn);
-            
-            if (updateOnFormated) {
-              updatedElement.textContent = `Atualizado em: ${updateOnFormated}`;
-            } else {
-              updatedElement.textContent = `Atualizado em: -`;
-            };
-          }
-
-          manipulateDetailsModal(taskId, taskValueFormated, detailsValueFormated);
-          storesDetails();
-          displayCreatedDate(task);
-          displayUpdateDate(taskId);
-          hasValueInLocalStorage();
         };
       }); 
     });

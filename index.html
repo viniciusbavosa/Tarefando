@@ -29,29 +29,29 @@
       bg-transparent
       "
   >
-  <div 
-    class="
-      overlay animate__animated
-      fixed
-      w-full
-      h-full
-      bg-[#00000080]
-      z-[1]
-      hidden
-      "
-  ></div>
-  <div 
-    class="
-      overlay-detail-modal
-      absolute
-      w-[100%]
-      h-[100%]
-      bg-[#00000080]
-      z-10
-      hidden 
-      animate__animated
-      "
-  ></div>
+    <div 
+      class="
+        overlay animate__animated
+        fixed
+        w-full
+        h-full
+        bg-[#00000080]
+        z-[1]
+        hidden
+        "
+    ></div>
+    <div 
+      class="
+        overlay-detail-modal
+        absolute
+        w-full
+        h-full
+        bg-[#00000080]
+        z-10
+        hidden 
+        animate__animated
+        "
+    ></div>
     <section
       class="
         homepage-container
@@ -89,16 +89,14 @@
           text-white
             font-medium
             absolute
-            px-2
-            text-[18px]
-            gap-y-2
+            px-4
+            text-[24px]
             top-[70px]
             justify-between
-            md:text-[24px]
             "
         >
           <a 
-            href="/"
+            href="index.html"
             class="
               flex
               w-44
@@ -112,7 +110,7 @@
             <li>Início</li>
           </a>
           <a 
-            href="#"
+            href="collections.html"
             class="
               flex
               p-3
@@ -122,30 +120,6 @@
               "
             >
             <li>Coleções</li>
-          </a>
-          <a 
-            href="index.html"
-            class="
-              flex
-              p-3
-              items-center
-              hover:bg-[#336A6480]
-              hover:rounded-3xl
-              "
-          >
-            <li>Lembretes</li>
-          </a>
-          <a 
-            href="#"
-            class="
-              flex
-              p-3
-              items-center
-              hover:bg-[#336A6480]
-              hover:rounded-3xl
-              "
-          >
-            <li>Calendário</li>
           </a>
         </ul>
         <div 
@@ -239,7 +213,7 @@
                     md:text-[22px]
                   "
                 >
-                  Tem certeza de que deseja excluir todas as tarefas?
+                  Deseja excluir todas as tarefas?
                 </p>
                 <div
                   class="
@@ -362,16 +336,11 @@
           <div
             class="
               moon-container
-              py-5
-              sm:px-4
+              my-5
+              mx-4
               "
           >
-            <button
-              class="
-              pr-4
-              "
-              title="Alternar para modo escuro"
-            >
+            <button class="dark-mode-bttn" title="Alternar para modo escuro">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="
                 moon-icon
@@ -391,7 +360,7 @@
               sun-container
               absolute
               top-5
-              sm:left-4
+              left-4
               invisible
               "
           >
@@ -459,7 +428,7 @@
           flex
           flex-col
           relative
-          
+          overflow-y-auto
           "
       >
         <div 
@@ -468,9 +437,6 @@
             "
         >
           <ul class="list"></ul>
-        </div>
-        <div class="svg-container flex invisible">
-          <img class="svg" src="./src/assets/svg/mansit.svg" alt="A man reading books">
         </div>
       </div>
       <div 
@@ -529,7 +495,6 @@
           justify-center
           self-center
           shadow-md
-          shadow-black
           xl:invisible
           "
       >

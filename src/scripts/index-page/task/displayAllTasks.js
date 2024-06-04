@@ -1,32 +1,36 @@
 import { createTaskElement } from "../../dynamic-content/dynamicHTML.js";
 import { deleteTask } from "./deleteTask.js";
-import displaySVG from "./displaySVG.js";
+import { openDB } from "../../../boilerplate/openDatabase.js";
+import { displayUpdatedDate } from "./detail-modal/date-time-info-details/timestamps-details.js";
 
 export function displayAllTasks() {
 
-  // Store all tasks
-  const inputCollection = [];
-  // Stores each tasks ID
-  let id;
+  const request = openDB('TasksDatabase');
 
-  // Iterates through localStorage, retrieves its key-value pairs and outputs them to an array 
-  for (let i = 0; i < localStorage.length; i++) {
-    id = localStorage.key(i);
-    
-    if (id.length > 36) {
-      continue;
-    }
-    const value = localStorage.getItem(id);
-    const valueFormated = JSON.parse(value);
-
-    const timestamps = localStorage.getItem(`${id}-created-date`);
-    const timestampsFormated = JSON.parse(timestamps); 
-    inputCollection.push({ id, valueFormated, timestampsFormated });
+  request.onerror = (event) => {
+    console.error("An error occurred with IndexedDB", event);
   };
-  
-   // Iterates through an array and retrieves its values using destructuring
-   for (let { id, valueFormated, timestampsFormated } of inputCollection) {
-    createTaskElement(valueFormated, id, timestampsFormated);
+
+  request.onsuccess = (event) => {
+    const db = request.result;
+    const transaction = db.transaction(["Tasks"]);
+    const objectStore = transaction.objectStore(["Tasks"]);
+    const tasks = objectStore.openCursor();
+
+    tasks.onsuccess = () => {
+      const cursor = tasks.result;
+      if (cursor) {
+        const { title, details, timestamp } = cursor.value.body;
+        const { id } = cursor.value;
+        createTaskElement(title, id, timestamp);
+        displayUpdatedDate();
+        cursor.continue();
+      };
+    };
+
+    tasks.onerror = () => {
+      console.log('Erro ao acessar objetos da loja' + tasks.error);
+    };
   };
 
   deleteTask();

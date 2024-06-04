@@ -1,34 +1,68 @@
-import { createDetailModal } from "../../../dynamic-content/dynamicHTML.js";
+import { openDB } from "../../../../boilerplate/openDatabase.js";
+import { displayUpdatedDate } from "./date-time-info-details/timestamps-details.js";
 
-export default function manipulateDetailsModal(taskId, taskValue, detailsValue) {
-  const detailsElement = document.querySelector('.detail-modal-container');
-  const closeModal = document.querySelector('.detail-modal-close-bttn');
-  const homepage = document.querySelector('.homepage-container');
+export default function manipulateDetailsModal(taskId, taskValue) {
+  const modalElement = document.querySelectorAll('.detail-modal-container');
+  const closeModal = document.querySelectorAll('.detail-modal-close-bttn');
   const overlay = document.querySelector('.overlay-detail-modal');
+  const detailsText = document.querySelector('.detail-modal-text');
 
-  if (!detailsElement) {
-    const detailElementHTML = createDetailModal(taskId, detailsValue);
-    homepage.insertAdjacentHTML('beforeend', detailElementHTML);
-    manipulateDetailsModal(taskId, taskValue, detailsValue); // Recursion
-  } else {
-    detailsElement.classList.remove('invisible', 'animate__slideOutRight');
-    detailsElement.classList.add('animate__slideInRight');
+  detailsText.addEventListener('input', () => {
+    const detailsTextFormated = detailsText.value.trim();
+    const request = openDB('TasksDatabase');
+      request.onerror = () => {
+        console.log('Erro ao abrir banco de dados ' + request.error);
+      };
+      
+      request.onsuccess = () => {
+        const db = request.result;
+        const transaction = db.transaction("Tasks", "readwrite");
+        const objectStore = transaction.objectStore("Tasks");
+        const task = objectStore.get(taskId);
 
-    // Display task value as title
-    detailsElement.children[0].children[0].textContent = taskValue;
-    
-    // Hide detail modal
-    closeModal.addEventListener('click', () => {
-      detailsElement.classList.remove('animate__slideInRight');
-      detailsElement.classList.add('animate__slideOutRight');
-      
-      overlay.classList.add('animate__fadeOut');
-      overlay.classList.remove('animate__fadeIn', 'block');
-      
-      setTimeout(() => {
-        detailsElement.remove();
-        overlay.classList.add('hidden');
-      }, 1000);
+        task.onsuccess = (event) => {
+            const task = event.target.result;
+            if (task) {
+              const newTaskDetail = { 
+                ...task, 
+                body: {
+                  ...task.body,
+                  details: detailsTextFormated,
+                }
+               };
+              objectStore.put(newTaskDetail);
+              displayUpdatedDate();
+            };
+          };
+         
+          task.onerror = () => {
+            console.log('Erro ao acessar loja de objetos ' + task.error);
+          };
+      };
     });
-  };
-}
+
+    modalElement.forEach((detailModal) => {
+
+      detailModal.classList.remove('invisible', 'animate__slideOutRight');
+      detailModal.classList.add('animate__slideInRight');
+      
+      // Display task value as title
+      detailModal.children[0].children[0].textContent = taskValue;
+      
+      // Hide detail modal
+      closeModal.forEach((closeBttn) => {
+        closeBttn.addEventListener('click', () => {
+          detailModal.classList.remove('animate__slideInRight');
+          detailModal.classList.add('animate__slideOutRight');
+          
+          overlay.classList.add('animate__fadeOut');
+          overlay.classList.remove('animate__fadeIn', 'block');
+          
+          setTimeout(() => {
+            detailModal.remove();
+            overlay.classList.add('hidden');
+          }, 900);
+        });
+      });
+    });
+    }
