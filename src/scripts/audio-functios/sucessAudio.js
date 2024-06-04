@@ -1,4 +1,7 @@
 export default function playSuccessAudio() {
+  const isSoundEnabled = JSON.parse(localStorage.getItem('isSoundEnabled') || 'true');
+  if (!isSoundEnabled) return;
+  
   const audio = new Audio();
   audio.src = './src/assets/audio/Complete.m4a';
   audio.preload = 'auto';

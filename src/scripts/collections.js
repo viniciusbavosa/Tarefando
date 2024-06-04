@@ -1,6 +1,7 @@
 import showInput from "./input/showInput.js"
 import displaySidebar from "./sidebar/displaySidebar.js";
 import toggleMode from "./dark-mode/toggleMode.js";
+import toggleSound from "./audio-functios/toggleSound.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -10,4 +11,5 @@ document.addEventListener('DOMContentLoaded', () => {
   // Display sidebar when clicked
   displaySidebar();
   toggleMode();
+  toggleSound();
 });

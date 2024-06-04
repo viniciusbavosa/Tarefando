@@ -1,4 +1,7 @@
 export default function playClickAudio() {
+  const isSoundEnabled = JSON.parse(localStorage.getItem('isSoundEnabled') || 'true');
+  if (!isSoundEnabled) return;
+
   const audio = new Audio();
   audio.src = './src/assets/audio/Click.m4a';
   audio.preload = 'auto';
