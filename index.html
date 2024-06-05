@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarefando</title>
+  <meta name="description" content="Tarefando é um gerenciador de tarefas intuitivo que ajuda você a organizar seu dia a dia de forma eficiente. Planeje, acompanhe e conclua suas tarefas com facilidade.">
+  <meta name="theme-color" content="#121212" />
   <base href="/Tarefando/">
   <link rel="manifest" href="manifest.json" type="application/manifest+json">
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon_io/apple-touch-icon.png">
@@ -16,7 +19,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <title>Tarefando - Inicio</title>
 </head>
 <body class="overflow-x-hidden">
   <main 
@@ -472,8 +474,8 @@
             focus:bg-[#0E3732]
               dark:focus:bg-light-grey
               " 
-              autocomplete="off" aria-required="true" maxlength="300">
-          <button type="submit" style="position: relative" class="send-bttn">
+              autocomplete="off" aria-required="true" maxlength="300" aria-label="Escreva sua tarefa">
+          <button type="submit" style="position: relative" class="send-bttn" aria-label="Criar tarefa">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="sendBttn" class="send-bttn stroke-white feather feather-plus" style="position: absolute; bottom: -7px; right: 15px;"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
           </button>
       </div>

@@ -5,6 +5,7 @@
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F5F5F5",
+  "theme-color": "#F5F5F5",
   "description": "Gerenciador de tarefas que ajuda você a organizar seu dia a dia!",
   "icons": [
     {
