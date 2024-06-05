@@ -23,7 +23,7 @@ export default function displaySavedTasks(folderID) {
           const taskTitle = event.target.result.body.title;
           const taskID = event.target.result.id;
           if (taskTitle && taskID) {
-            const taskHTML = ` <li class="task-inside-folder-item flex justify-between items-center p-4 border-b border-[#DCD6E0] dark:border-on-surface-light-elevation">
+            const taskHTML = ` <li class="task-inside-folder-item flex justify-between items-center p-4 border-b border-[#DCD6E0] dark:border-[#565559]">
             <span class="text-lg max-w-52">${taskTitle}</span>
             <button
             title="Clique para excluir"

@@ -387,6 +387,8 @@ function openBookmarkModal() {
         rounded-lg 
         p-6 
         w-fit
+        sm:w-auto
+        dark:bg-dark-grey
         animate__animated
         animate__fadeIn
         "

@@ -8,7 +8,6 @@ export default function addTaskToFolder(folderID, taskID) {
   const request = openDB('TasksInFoldersDB', 2);
   const updateRequest = openDB('TasksInFoldersDB', 2);
 
-
   request.onerror = (event) => {
     console.error("An error occurred with IndexedDB", event);
   };

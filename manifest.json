@@ -2,7 +2,7 @@
   "lang": "pt-BR",
   "name": "Tarefando",
   "short_name": "Tarefando",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F5F5F5",
   "description": "Gerenciador de tarefas que ajuda você a organizar seu dia a dia!",
@@ -13,7 +13,7 @@
       "type":"image/png"
     },  
     {
-      "src":"/favicon_io//android-chrome-512x512.png",
+      "src":"/favicon_io/android-chrome-512x512.png",
       "sizes":"512x512",
       "type":"image/png"
       }

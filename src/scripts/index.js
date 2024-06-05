@@ -11,17 +11,23 @@ import toggleMode from "./dark-mode/toggleMode.js";
 import displayDetails from "./index-page/task/detail-modal/displayDetails.js";
 import { displayUpdatedDate } from "./index-page/task/detail-modal/date-time-info-details/timestamps-details.js";
 import toggleSound from "./audio-functios/toggleSound.js";
+import { openTasksDatabase } from "../boilerplate/openTasksDatabase.js";
+import { openCollectionDatabase } from "../boilerplate/openCollectionDatabase.js";
+import { openTasksInFolderDatabase } from "../boilerplate/openTasksInFolderDatabase.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   const sendButton = document.querySelector('#sendBttn');
   const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
  
+  openTasksDatabase();
+  openCollectionDatabase();
+  openTasksInFolderDatabase();
   // Display main input
   showInput();
   
   // display all tasks
  displayAllTasks();
- displaySVG();
+  displaySVG();
   
   // Delete all tasks
   deleteAllTasksBttn.addEventListener('click', () => {
