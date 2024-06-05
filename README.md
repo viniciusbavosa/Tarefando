@@ -4,6 +4,6 @@ Clone this repo
 
 npm Install
 
-npm run test
+remove <base> tag from index.html and collections.html
 
-open index.html with live server
+open index.html
