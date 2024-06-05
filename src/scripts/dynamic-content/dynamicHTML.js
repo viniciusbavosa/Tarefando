@@ -191,7 +191,7 @@ function createDetailModal(id, value) {
       dark:border-[#565559]
       "
   >
-    <button class="bookmark-collection" title="Adicionar a uma pasta" data-task="${id}">
+    <button class="bookmark-collection" title="Agrupar em uma coleção" data-task="${id}">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
       class="
         m-6 
@@ -252,6 +252,7 @@ function createFolderElement(idCollection, title) {
         type="button"
         data-id-collection="${idCollection}"
         id="${idCollection}"
+        title="Clique para abrir coleção"
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
         class="
@@ -271,7 +272,8 @@ function createFolderElement(idCollection, title) {
           focus:outline-none
           "
         id="collection-name-${idCollection}"
-        contenteditable="plaintext-only">${title}</h1>
+        contenteditable="plaintext-only"
+        title="Editar título da coleção">${title}</h1>
   </button>`;
   collectionFolderList.insertAdjacentHTML("beforeend", newFolder);
   if (illustration) {

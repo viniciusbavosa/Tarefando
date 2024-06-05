@@ -9,7 +9,7 @@ import toggleSound from "./audio-functios/toggleSound.js";
 import displaySVG from "./index-page/task/displaySVG.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-  const deleteAllTasksBttn = document.querySelector('.delete-all-tasks-bttn');
+  const deleteAllCollectionsBttn = document.querySelector('.delete-all-collections-bttn');
   const body = document.body;
   const SunIcon = document.querySelector('.sun-container');
   const MoonIcon = document.querySelector('.moon-container');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   displayAllCollections();
   displaySVG();
   // Delete all tasks
-  deleteAllTasksBttn.addEventListener('click', () => {
+  deleteAllCollectionsBttn.addEventListener('click', () => {
    deleteAllCollections();
  });
  
