@@ -28,7 +28,7 @@ export default function displayFoldersAvailable() {
 
             if (foldersList) { // Verifica se o elemento existe antes de inserir HTML nele
               folderData.forEach((folder) => {
-                const folderHTML = `<li><button class="chip" data-folder="${folder.idCollection}" title="Clique para agrupar nessa coleção">${folder.nameFormated}</button></li>`;
+                const folderHTML = `<li><button class="chip" title="Clique para agrupar nessa coleção" data-folder="${folder.idCollection}">${folder.nameFormated}</button></li>`;
                 foldersList.insertAdjacentHTML('beforeend', folderHTML);
               });
               // Adiciona evento de clique para os botões de pasta
