@@ -41,7 +41,7 @@ Clone este repositório
 npm install
 npm run build
 Comente a tag <base> dos arquivos index.html e collections.html
-Execute o index.html
+Abra o index.html com o live server
 ```
 
 ## Autores
