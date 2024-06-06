@@ -1,0 +1,25 @@
+@import "tailwindcss/base";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --light-background: 245 245 245; /*cinza claro */
+    --primary-color: 0 69 61; /* verde do light mode #00453D */
+    --secondary-light-color: 51 106 100; /* #336A64 */
+    --secondary-dark-color: 26 43 41; /*verde do dark mode #1A2B29 */
+    --text-color: 0 69 61; /*mesmo verde do light mode #00453D */
+    --deep-grey: 30 30 30; /*cinza da sidebar do dark mode #1E1E1E */
+    --light-grey: 47 47 47; /* #2F2F2F */
+    --on-surface-light: 230 236 236; /* #E6ECEC */
+  }
+}
+
+@layer utilities {
+  .chip {
+    @apply px-4 py-1 bg-on-surface-light-elevation rounded-full text-sm font-medium text-gray-700 cursor-pointer hover:bg-gray-300 truncate sm:px-6 sm:py-2 sm:text-base md:px-8 md:py-3 md:text-lg;
+    
+  }
+  .chip-confirmed {
+    @apply bg-green text-white font-semibold pointer-events-none text-center;
+  }
+}

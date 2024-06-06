@@ -1,15 +1,14 @@
 {
   "name": "pai-organiza",
   "version": "1.0.0",
-  "description": "Um gerenciador de tarefas dinamico e eficiente criado para ajudar o meu pai a organizar as tarefas do dia.",
+  "description": "Um gerenciador de tarefas prático organizar as tarefas do dia.",
   "main": "index.html",
   "engines": {
     "node": ">=14"
   },
   "type": "module",
   "scripts": {
-    "tw": "npx tailwindcss -i ./tailwind/input.css -o ./src/styles/output.css --watch",
-    "test": "node ./tests/selenium/frontend/send_task_test.js"
+    "build": "npx tailwindcss -i ./tailwind/input.css -o ./src/styles/output.css --watch"
   },
   "author": "Vinicius Bavosa",
   "license": "AGPL-3.0-or-later",
@@ -17,7 +16,6 @@
     "selenium-webdriver": "^4.19.0"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.3",
-    "uglify-js": "^3.17.4"
+    "tailwindcss": "^3.4.3"
   }
 }
