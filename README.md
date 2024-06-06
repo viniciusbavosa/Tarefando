@@ -39,7 +39,7 @@ Esse projeto pessoal surgiu da necessidade de resolver um problema enfrentado pe
 ```
 Clone este repositório
 npm install
-npm run tw
+npm run build
 Comente a tag <base> dos arquivos index.html e collections.html
 Execute o index.html
 ```
