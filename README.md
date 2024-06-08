@@ -7,43 +7,43 @@
   <img src="https://img.shields.io/badge/Figma-121212?&logo=figma&logoColor=red" />
 </div>
 
-# Tarefando - Gerenciador de tarefas
+# Tarefando - Task Manager
 
 ![Tarefando Screenshot](https://tinypic.host/images/2024/06/06/Tarefando-lightd802b183cd482a1d.png)
 
-## Contexto e Objetivo
+## Context and Objective
 
-Esse projeto pessoal surgiu da necessidade de resolver um problema enfrentado pelo meu pai, que frequentemente esquecia tarefas do dia a dia. Por ele ter uma certa desconfiança com aplicativos, decidi criar um gerenciador de tarefas especialmente para ele, aplicando meus conhecimentos em JavaScript.
+I developed this project to help my dad, who often forgets his daily tasks. He's not a big fan of apps, so I built a simple task manager just for him using JavaScript.
 
 ## Features
 
-- O Tarefando conta com a possibilidade de criar tarefas e agrupá-las em coleções caso se relacionem uma com a outra. Por exemplo, podemos criar uma coleção chamada 𝗖𝗼𝗻𝘁𝗮𝘀 e guardar dentro dela tarefas relacionadas ao pagamento das contas do mês.
+- Tarefando allows you to create tasks and group them into collections if they are related to each other. For example, you can create a collection called **Bills** and store tasks related to monthly bill payments within it.
 
- - Por utilizar o IndexedDB e armazenar os dados localmente, não é preciso se preocupar com a perda de dados caso a internet caia no meio de uma operação.
+- By using IndexedDB and storing data locally, you don't have to worry about data loss if the internet goes down in the middle of an operation.
 
-- Você pode adicionar a aplicação na homepage do seu celular ou do seu desktop e utiliza-lo como um executável/app. O Tarefando é um 𝗣𝗿𝗼𝗴𝗿𝗲𝘀𝘀𝗶𝘃𝗲 𝗪𝗲𝗯 𝗔𝗽𝗽.
+- You can add the application to your mobile or desktop homepage and use it as an executable/app. Tarefando is a **Progressive Web App**.
 
-- Você escolhe se deseja o modo claro ou se o modo escuro te agrada mais.
+- You can choose whether you prefer light mode or if you find dark mode more pleasing.
 
-- Caso os sons da aplicação te atrapalhe, você pode silencia-los na sidebar.
+- If the application's sounds disturb you, you can mute them in the sidebar.
 
 
-## Tecnologias e Ferramentas
+## Technologies and Tools
 
-- **Linguagens:** JavaScript
-- **Estilização:** Tailwind CSS
-- **Banco de Dados:** IndexedDB
+- **Languages:** JavaScript
+- **Styling:** Tailwind CSS
+- **Database:** IndexedDB
 
-## Instalação
+## Installation
 
 ```
-Clone este repositório
+Clone this repository
 npm install
 npm run build
-Comente a tag <base> dos arquivos index.html e collections.html
-Abra o index.html com o live server
+Comment out the <base> tag in the index.html and collections.html files
+Open index.html with live server
 ```
 
-## Autores
+## Authors
 
 - Vinicius Bavosa | [GitHub](https://github.com/viniciusbavosa) - [LinkedIn](https://linkedin.com/in/vinicius-bavosa-b94977298)
