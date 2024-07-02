@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/status-finished-blue" />
+  <img src="https://img.shields.io/badge/status-refactoring-blue" />
   <img src="https://img.shields.io/badge/JavaScript-FFF?&logo=JavaScript&logoColor=yellow" />
   <img src="https://img.shields.io/badge/Tailwind-404D59?&logo=tailwindCSS&logoColor=white" />
   <img src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?&logo=visual-studio-code&logoColor=white" />
@@ -10,10 +10,12 @@
 # Tarefando - Task Manager
 
 ![Tarefando Screenshot](https://tinypic.host/images/2024/06/06/Tarefando-lightd802b183cd482a1d.png)
+<p align="center"><strong>This project is currently being refactored to use React and TypeScript.</strong></p>
 
 ## Context and Objective
 
 I developed this project to help my dad, who often forgets his daily tasks. He's not a big fan of apps, so I built a simple task manager just for him using JavaScript.
+
 
 ## Features
 
