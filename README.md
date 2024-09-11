@@ -10,7 +10,7 @@
 # Tarefando - Task Manager
 
 ![Tarefando Screenshot](https://tinypic.host/images/2024/06/06/Tarefando-lightd802b183cd482a1d.png)
-<p align="center"><strong>This project is currently being refactored to use React and TypeScript.</strong></p>
+<p align="center"><strong>This project is currently being refactored to use Angular and TypeScript.</strong></p>
 
 ## Context and Objective
 
